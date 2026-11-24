@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="ba-t ba-d" font-family="Segoe UI, Roboto, Arial, sans-serif">
+<title id="ba-t">Before and after: replacing a septic tank that runs to a ditch</title>
+<desc id="ba-d">Left, before: an old septic tank sends dirty liquid straight into a ditch, which is not allowed. Right, after: a new sewage treatment plant sends cleaned water to a stream that flows all year, which the rules allow.</desc>
+<!-- BEFORE panel -->
+<rect x="0" y="0" width="396" height="400" fill="#F6F1E6"/>
+<rect x="0" y="0" width="396" height="190" fill="#DCEFF2"/>
+<rect x="0" y="190" width="396" height="210" fill="#C9A57A"/>
+<rect x="0" y="184" width="396" height="10" fill="#6E9B4F"/>
+<path d="M30 184V128L75 98L120 128V184Z" fill="#E9D3A6" stroke="#1D2327" stroke-width="3"/><path d="M24 132L75 92L126 132" fill="none" stroke="#1E4D45" stroke-width="7"/>
+<path d="M95 184V232H140" stroke="#5a5f63" stroke-width="10" fill="none"/>
+<rect x="138" y="214" width="110" height="80" rx="10" fill="#8b8f8a" stroke="#1D2327" stroke-width="3"/>
+<path d="M150 226L160 240M200 222L208 238M230 270L222 280" stroke="#1D2327" stroke-width="2"/>
+<text x="193" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">OLD TANK</text>
+<path d="M248 232H330" stroke="#5a5f63" stroke-width="10"/>
+<path d="M320 196Q345 240 396 236V258Q340 262 312 210Z" fill="#7b6a4a"/>
+<g fill="#5b4a30"><circle cx="350" cy="244" r="4"/><circle cx="372" cy="248" r="3"/></g>
+<circle cx="340" cy="140" r="30" fill="#B5432F"/><path d="M326 126L354 154M354 126L326 154" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+<text x="20" y="40" font-size="22" font-weight="800" fill="#B5432F">BEFORE</text>
+<text x="20" y="64" font-size="15" fill="#1D2327">Septic tank straight to a ditch</text>
+<text x="20" y="330" font-size="15" font-weight="700" fill="#1D2327">Not allowed under the</text><text x="20" y="350" font-size="15" font-weight="700" fill="#1D2327">general binding rules.</text>
+<text x="20" y="372" font-size="14" fill="#1D2327">Dirty liquid pollutes the water</text><text x="20" y="390" font-size="14" fill="#1D2327">and flags up when you sell.</text>
+<!-- AFTER panel -->
+<g transform="translate(404 0)">
+<rect width="396" height="400" fill="#F6F1E6"/>
+<rect width="396" height="190" fill="#DCEFF2"/>
+<rect y="190" width="396" height="210" fill="#C9A57A"/>
+<rect y="184" width="396" height="10" fill="#6E9B4F"/>
+<path d="M30 184V128L75 98L120 128V184Z" fill="#E9D3A6" stroke="#1D2327" stroke-width="3"/><path d="M24 132L75 92L126 132" fill="none" stroke="#1E4D45" stroke-width="7"/>
+<path d="M95 184V232H140" stroke="#5a5f63" stroke-width="10" fill="none"/>
+<rect x="138" y="206" width="110" height="92" rx="22" fill="#c7d6d9" stroke="#1D2327" stroke-width="3"/>
+<rect x="150" y="178" width="86" height="8" rx="3" fill="#1D2327"/><rect x="186" y="186" width="14" height="22" fill="#5a5f63"/>
+<g fill="#fff" stroke="#2E7C88" stroke-width="2"><circle cx="175" cy="262" r="5"/><circle cx="195" cy="244" r="4"/><circle cx="212" cy="266" r="5"/></g>
+<text x="193" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#1E4D45">NEW PLANT</text>
+<rect x="258" y="150" width="34" height="34" rx="4" fill="#1E4D45"/><text x="275" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">AIR</text>
+<path d="M248 232H330" stroke="#5a5f63" stroke-width="10"/>
+<path d="M316 196Q345 240 396 236V262Q338 266 310 212Z" fill="#2E7C88"/>
+<path d="M338 236Q352 230 366 238" stroke="#DCEFF2" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="340" cy="140" r="30" fill="#1E4D45"/><path d="M326 141L337 152L356 128" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="20" y="40" font-size="22" font-weight="800" fill="#1E4D45">AFTER</text>
+<text x="20" y="64" font-size="15" fill="#1D2327">Treatment plant to a flowing stream</text>
+<text x="20" y="330" font-size="15" font-weight="700" fill="#1D2327">Allowed under the rules,</text><text x="20" y="350" font-size="15" font-weight="700" fill="#1D2327">with building control sign-off.</text>
+<text x="20" y="372" font-size="14" fill="#1D2327">Much cleaner water, and paperwork</text><text x="20" y="390" font-size="14" fill="#1D2327">ready for when you sell.</text>
+</g>
+</svg>

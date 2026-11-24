@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const L = require('./src/layout');
-const { page, esc, gbp, isTodo, faqHtml, faqSchema, ctaBand, relatedHtml, phoneHref, phoneLabel, cfg } = L;
+const { page, esc, gbp, isTodo, faqHtml, faqSchema, ctaBand, relatedHtml, phoneHref, phoneLabel, cfg, ICONS, figure, journeyHtml, prosConsHtml, checkerHtml } = L;
 const services = require('./src/data/services');
 const guides = require('./src/data/guides');
 const areas = require('./src/data/areas');
@@ -33,7 +33,8 @@ function glanceHtml(rows) {
   return `<dl class="glance">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>`;
 }
 function sectionsHtml(sections) {
-  return sections.map(s => `<section><h2>${s.h2}</h2>${s.html}</section>`).join('\n');
+  const comp = { journey: () => journeyHtml(), proscons: () => prosConsHtml(), checker: () => checkerHtml() };
+  return sections.map(s => `<section><h2>${s.h2}</h2>${s.fig ? (Array.isArray(s.fig) ? `<div class="diagram-pair">${s.fig.map(f => figure(f.src, f.alt, f.caption)).join('')}</div>` : figure(s.fig.src, s.fig.alt, s.fig.caption)) : ''}${s.html}${s.add ? comp[s.add]() : ''}</section>`).join('\n');
 }
 function dist(a, b) { // straight-line miles
   const R = 3958.8, toR = (d) => d * Math.PI / 180;
@@ -51,61 +52,93 @@ fs.cpSync(path.join(__dirname, 'static'), OUT, { recursive: true });
 
 // ---------- home ----------
 {
-  const featured = ['septic-tank-replacement', 'sewage-treatment-plant-installation', 'selling-a-house-with-a-septic-tank', 'septic-tank-survey', 'drainage-field-installation', 'treatment-plant-servicing']
-    .map(k => services.find(s => s.slug === k));
+  const featured = [
+    ['septic-tank-replacement', 'house'], ['sewage-treatment-plant-installation', 'drop'], ['selling-a-house-with-a-septic-tank', 'handover'],
+    ['septic-tank-survey', 'visit'], ['drainage-field-installation', 'dig'], ['treatment-plant-servicing', 'shield'],
+  ].map(([k, icon]) => ({ s: services.find(x => x.slug === k), icon }));
   const homeFaqs = [
     { q: 'Do I need to replace my septic tank?', a: 'If it discharges to a stream, river or ditch, yes: under the general binding rules a septic tank must not discharge to a watercourse. If it goes to a working drainage field and is in good order, it may be fine. A survey will tell you.' },
     { q: 'How much does it cost to replace a septic tank?', a: `For a normal house, a full replacement with a treatment plant typically costs ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}. We give a fixed written quote after a free site visit.` },
+    { q: 'I don\'t know anything about septic tanks. Is that a problem?', a: 'Not at all. Most people with a septic tank have never had to think about where their drains go. We explain everything in plain English, show you where everything is, and give you a simple guide to looking after it.' },
+    { q: 'How much mess will it make?', a: 'There will be a digger and some open ground for a few days. We plan the route to keep disruption down, protect drives and paths where we can, and put the ground back when we finish. Your quote says exactly what reinstatement is included.' },
     { q: 'Which areas do you cover?', a: 'Yeovil and everywhere within about an hour: south Somerset, north and west Dorset, east Devon and the edge of Wiltshire.' },
     { q: 'I am selling my house. Can you help quickly?', a: 'Yes. We can survey the system, give you a written report for the buyer and a fixed quote if work is needed. Tell us your completion date when you call.' },
   ];
   const body = `
 <section class="wrap trust-strip" aria-label="Why choose us">
   <ul>
-    <li><strong>Local</strong><span>Based in Yeovil, working within an hour</span></li>
-    <li><strong>Fixed quotes</strong><span>In writing, after a free site visit</span></li>
-    <li><strong>Survey to sign-off</strong><span>Design, building control, install, paperwork</span></li>
-    <li><strong>Straight answers</strong><span>Including when you don't need us</span></li>
+    <li><strong>Local to Yeovil</strong><span>Working within about an hour of the town</span></li>
+    <li><strong>Prices up front</strong><span>Typical costs published, then a fixed written quote</span></li>
+    <li><strong>One team, start to finish</strong><span>Survey, design, building control, install, paperwork</span></li>
+    <li><strong>Plain English</strong><span>No jargon, and honest about when you don't need us</span></li>
   </ul>
 </section>
-<section class="wrap">
-  <h2>Why old septic tanks are being replaced</h2>
-  <p>Under the Environment Agency's general binding rules, a septic tank in England must not discharge to a stream, river or ditch. Thousands of older rural homes still do. The rule bites hardest when a house is sold, because the buyer's solicitor asks where the waste water goes. If the answer is "the ditch", it needs upgrading, usually to a modern <a href="/sewage-treatment-plant-installation/">sewage treatment plant</a>.</p>
-  <p>We are a Yeovil-based team that does one thing well: replacing old septic tanks with systems that meet today's rules, properly designed, installed and signed off. <a href="/guides/general-binding-rules/">Read the rules in plain English</a>.</p>
+
+<div class="wrap">${checkerHtml()}</div>
+
+<section class="wrap two-col">
+  <div>
+    <h2>Why old septic tanks are being replaced</h2>
+    <p>Under the Environment Agency's general binding rules, a septic tank in England must not discharge to a stream, river or ditch. Thousands of older rural homes still do, often without the owner knowing.</p>
+    <p>It usually comes to light when a house is sold: the buyer's solicitor asks where the waste water goes. If the answer is "the ditch", it needs upgrading, usually to a modern <a href="/sewage-treatment-plant-installation/">sewage treatment plant</a>.</p>
+    <p><a href="/guides/general-binding-rules/">Read the rules in plain English</a></p>
+  </div>
+  <div>${figure('before-after.svg', 'Before: an old septic tank sending dirty liquid into a ditch, marked not allowed. After: a new treatment plant sending clean water to a flowing stream, marked allowed.', 'Before and after: the most common upgrade.')}</div>
 </section>
+
+<section class="band"><div class="wrap">
+  <h2>Never seen inside a septic tank? Here's how it all works</h2>
+  <p class="section-lead">Most people have never had to think about where their toilet goes. These two diagrams explain the difference in about 30 seconds.</p>
+  <div class="diagram-pair">
+    ${figure('septic-tank-diagram.svg', 'Cutaway of a septic tank: waste comes in, solids sink as sludge, scum floats, and the liquid flows out to a drainage field where the soil cleans it.', '<strong>Septic tank:</strong> separates solids. The soil does the cleaning.')}
+    ${figure('treatment-plant-diagram.svg', 'Cutaway of a sewage treatment plant: solids settle, an air pump feeds bacteria that clean the water, it settles again and clean water flows out to a stream.', '<strong>Treatment plant:</strong> cleans the water itself, so it can go to a stream.')}
+  </div>
+  ${prosConsHtml()}
+  <p><a class="btn btn-green" href="/how-it-works/">See the full explainer</a></p>
+</div></section>
+
 <section class="wrap">
   <h2>What we do</h2>
-  <ul class="card-grid">${featured.map(s => `<li><a class="card" href="/${s.slug}/"><strong>${esc(s.h1)}</strong><span>${esc(s.lead.split('. ')[0])}.</span></a></li>`).join('')}</ul>
+  <ul class="card-grid">${featured.map(({ s, icon }) => `<li><a class="card" href="/${s.slug}/"><span class="card-icon">${ICONS[icon]}</span><strong>${esc(s.h1)}</strong><span>${esc(s.lead.split('. ')[0])}.</span></a></li>`).join('')}</ul>
 </section>
-<section class="band"><div class="wrap">
-  <h2>How it works</h2>
-  <ol class="steps steps-inline">
-    <li><strong>Free site visit</strong><span>We find the tank and the outfall, and check the ground and access.</span></li>
-    <li><strong>Fixed written quote</strong><span>Plant, location, discharge, electrics, reinstatement, building control.</span></li>
-    <li><strong>Install</strong><span>Old tank out, new system in, usually 3 to 5 days on site.</span></li>
-    <li><strong>Sign-off and paperwork</strong><span>Building control, maintenance notice, handover pack for any future sale.</span></li>
-  </ol>
-</div></section>
+
+<section class="band"><div class="wrap">${journeyHtml('What happens when you call us')}</div></section>
+
 <section class="wrap two-col">
   <div>
     <h2>Typical prices</h2>
-    <p>Most competitors won't publish prices. We think you should know roughly what to expect before you call.</p>
+    <p>Most firms won't publish prices. We think you should know roughly what to expect before you pick up the phone.</p>
     <ul class="price-list">
-      <li><span>Full septic tank to treatment plant replacement</span><strong>${gbp(p.replacementTypicalLow)}â€“${gbp(p.replacementTypicalHigh)}</strong></li>
-      <li><span>New drainage field</span><strong>${gbp(p.drainageFieldLow)}â€“${gbp(p.drainageFieldHigh)}</strong></li>
+      <li><span>Full septic tank to treatment plant replacement</span><strong>${gbp(p.replacementTypicalLow)}–${gbp(p.replacementTypicalHigh)}</strong></li>
+      <li><span>New drainage field</span><strong>${gbp(p.drainageFieldLow)}–${gbp(p.drainageFieldHigh)}</strong></li>
       <li><span>Septic tank survey</span><strong>from ${gbp(p.surveyFrom)}</strong></li>
       <li><span>Treatment plant service</span><strong>from ${gbp(p.serviceFrom)}</strong></li>
     </ul>
-    <p><a href="/septic-tank-replacement-cost/">What changes the price</a></p>
+    <p><a href="/septic-tank-replacement-cost/">What's included, and what changes the price</a></p>
   </div>
   <div>
+    <h2>What you can expect from us</h2>
+    <ul class="promise">
+      <li>${ICONS.quote}<div><strong>A fixed price in writing</strong><span>Before any work starts.</span></div></li>
+      <li>${ICONS.chat}<div><strong>Plain-English advice</strong><span>We explain your options, including the cheaper ones.</span></div></li>
+      <li>${ICONS.approval}<div><strong>Done to the rules</strong><span>Designed to the general binding rules and building regulations.</span></div></li>
+      <li>${ICONS.handover}<div><strong>Paperwork for your sale</strong><span>A handover pack with everything a buyer will ask for.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap two-col">
+  <div>
     <h2>Selling a house with a septic tank?</h2>
-    <p>A non-compliant septic tank can hold up a sale. We survey fast, give you a written report for the buyer, and a fixed quote if work is needed, so everyone can agree a way forward.</p>
+    <p>A non-compliant septic tank can hold up a sale. We survey quickly, give you a written report for the buyer, and a fixed quote if work is needed, so everyone can agree a way forward.</p>
     <p><a class="btn btn-green" href="/selling-a-house-with-a-septic-tank/">Help for sellers and buyers</a></p>
+  </div>
+  <div>
     <h2>Somerset phosphate schemes</h2>
     <p>Yeovil and most of south Somerset drain to the Somerset Levels and Moors. Some homeowners may qualify for a funded upgrade. <a href="/phosphate-credits-somerset/">We'll tell you honestly if a scheme suits you better</a>.</p>
   </div>
 </section>
+
 <section class="wrap">
   <h2>Areas we cover</h2>
   <p>Yeovil and about an hour around, across Somerset, Dorset, east Devon and south-west Wiltshire.</p>
@@ -115,12 +148,118 @@ fs.cpSync(path.join(__dirname, 'static'), OUT, { recursive: true });
 ${ctaBand()}`;
   add('/', page({
     path: '/', areas, hero: true,
-    title: `Septic Tank Replacement Yeovil, Somerset & Dorset | ${cfg.brandShort}`,
-    description: 'Septic tank replacement and sewage treatment plant installation in Yeovil and across Somerset and Dorset. Free site visit, fixed written quotes, survey to sign-off.',
-    h1: 'Septic tank replacement in Yeovil, Somerset and Dorset',
-    lead: 'We replace old and non-compliant septic tanks with modern sewage treatment plants. Local, straight-talking and fixed-price, from the first survey to building control sign-off.',
+    title: `Septic Tank Replacement Yeovil, Somerset & Dorset | ${cfg.brand}`,
+    description: 'Septic tank replacement and sewage treatment plant installation in Yeovil, Somerset and Dorset. Clear prices, free site visit, fixed written quotes.',
+    h1: 'Old septic tank? We\'ll replace it properly.',
+    lead: 'Yeo Drainage replaces old and non-compliant septic tanks with modern sewage treatment plants, across Yeovil, Somerset and Dorset. We explain everything in plain English, publish our prices, and handle it all from survey to sign-off.',
     body, crumbs: null, schema: [faqSchema(homeFaqs)],
   }), 1.0);
+}
+
+// ---------- how it works ----------
+{
+  const pth = '/how-it-works/';
+  const faqs = [
+    { q: 'How do I know if I have a septic tank or a treatment plant?', a: 'Most treatment plants need electricity, so there is usually a small air pump in a box or kiosk nearby, and you may hear a gentle hum. A septic tank has no power and no moving parts. Old septic tanks are often brick or concrete with heavy lids.' },
+    { q: 'Where does my toilet waste actually go?', a: 'Into the tank in your garden. Solids stay in the tank until it is emptied by a tanker. The liquid flows out, either into the ground through a drainage field, or, for a treatment plant, sometimes into a stream.' },
+    { q: 'Do treatment plants smell?', a: 'A working, serviced plant should not smell beyond a faint earthy odour when the lid is open. A strong smell usually means the air pump has failed or it needs emptying.' },
+    { q: 'How long do they last?', a: 'The tank itself is built to last many years. Moving parts such as air pumps wear out and are replaced from time to time, which is part of why a yearly service matters.' },
+  ];
+  const body = `
+<div class="wrap content">
+<section><h2>The short version</h2>
+<p>If your home isn't on the mains sewer, everything from your toilets, sinks and showers goes into a tank in your garden. That tank does one of two jobs:</p>
+<ul>
+<li>A <strong>septic tank</strong> lets the solids settle out, then sends the still-dirty liquid into the ground, where the soil cleans it.</li>
+<li>A <strong>sewage treatment plant</strong> cleans the liquid itself, using air and natural bacteria, so much cleaner water comes out.</li>
+</ul>
+<p>The difference matters because of where the water is allowed to go. That's what decides whether your system meets the rules.</p></section>
+
+<section><h2>How a septic tank works</h2>
+${figure('septic-tank-diagram.svg', 'Cutaway of a two-chamber septic tank: waste in from the house, scum floating on top, sludge settling at the bottom, liquid flowing out to a drainage field where the soil cleans it.', 'A septic tank only separates the solids. The liquid that leaves it still needs cleaning by the soil.')}
+<ol>
+<li><strong>Waste flows in</strong> from the house through an underground pipe.</li>
+<li><strong>Fats and oils float</strong> to the top as a crust called scum.</li>
+<li><strong>Solids sink</strong> to the bottom as sludge. This builds up and has to be pumped out by a tanker, usually at least once a year.</li>
+<li><strong>A second chamber</strong> lets more solids settle.</li>
+<li><strong>The liquid</strong> (called effluent) flows out into a <a href="/drainage-field-installation/">drainage field</a>: perforated pipes in gravel trenches, where the soil filters and cleans it.</li>
+</ol>
+<p>Because the liquid is still dirty, a septic tank <strong>must not</strong> discharge straight to a stream, river or ditch in England. That's the rule that catches out so many older homes.</p></section>
+
+<section><h2>How a sewage treatment plant works</h2>
+${figure('treatment-plant-diagram.svg', 'Cutaway of a sewage treatment plant in three stages: settling, aeration with an air pump and bacteria, and final settling, with clean treated water flowing out to a stream.', 'A treatment plant cleans the water itself, so it can discharge to a stream that flows all year.')}
+<ol>
+<li><strong>Settle:</strong> like a septic tank, solids sink to the bottom of the first chamber.</li>
+<li><strong>Air and bacteria:</strong> a small electric air pump bubbles air through the liquid. Natural bacteria thrive on it and break down the waste. This is the clever bit.</li>
+<li><strong>Settle again:</strong> any remaining bits settle out and are returned to the start.</li>
+<li><strong>Clean water out:</strong> the treated water is clean enough to go to a stream that flows all year round, or into a drainage field.</li>
+</ol>
+<p>Most plants need electricity, and all need a yearly service and regular emptying. In return, you get far cleaner water and more choice about where it can go. See <a href="/sewage-treatment-plant-installation/">treatment plant installation</a>.</p></section>
+
+<section><h2>Septic tank or treatment plant: pros and cons</h2>
+${prosConsHtml()}
+<p>Neither is "better" for everyone. If your ground drains well and there's room for a drainage field, a septic tank can still be a good, legal option. If your only outlet is a stream, or your ground is heavy clay, a treatment plant is usually the answer. More detail: <a href="/guides/septic-tank-vs-treatment-plant/">septic tank vs treatment plant</a>.</p></section>
+
+<section><h2>Why so many septic tanks need replacing</h2>
+${figure('before-after.svg', 'Before: an old septic tank sending dirty liquid into a ditch, marked not allowed. After: a treatment plant sending clean water to a flowing stream, marked allowed.', 'The most common upgrade: same outlet, new plant, clean water.')}
+<p>Many homes built before modern rules had septic tanks piped straight to the nearest ditch or stream. Under the general binding rules this isn't allowed, and the old deadline of 1 January 2020 has passed. Replacing the tank with a treatment plant often means the same outlet can be used, because the water leaving it is now clean, provided the stream flows all year. See <a href="/septic-tank-replacement/">septic tank replacement</a>.</p></section>
+
+<section><h2>What a drainage field looks like</h2>
+${figure('drainage-field-plan.svg', 'Plan of a garden showing house, tank and a drainage field of parallel perforated pipes in gravel trenches, at least 15 metres from the house and 10 metres from a stream, with the tank within 30 metres of tanker access.', 'Key distances from Approved Document H, the building regulations guidance.')}
+<p>If the water is going into the ground, it needs a properly designed drainage field, not just a rubble-filled hole. The field must be at least 15m from any building and 10m from any watercourse, and the ground must pass a <a href="/guides/percolation-test/">percolation test</a>.</p></section>
+</div>
+<div class="band"><div class="wrap">${journeyHtml('What a replacement involves')}</div></div>
+<div class="wrap content">
+${checkerHtml()}
+${faqHtml(faqs)}
+${relatedHtml(rel(['septic-tank-replacement', 'sewage-treatment-plant-installation', 'septic-tank-replacement-cost', 'guides/general-binding-rules']))}
+</div>
+${ctaBand('Want us to take a look?')}`;
+  add(pth, page({
+    path: pth, areas,
+    title: 'How Septic Tanks & Treatment Plants Work, with Diagrams',
+    description: 'How does a septic tank work? How does a sewage treatment plant work? Simple diagrams, pros and cons, and why so many old tanks are being replaced.',
+    h1: 'How septic tanks and treatment plants work',
+    lead: 'Never had to think about where your toilet goes? You\'re not alone. Here\'s how it all works, with simple diagrams, in about three minutes.',
+    body, crumbs: [{ name: 'Home', path: '/' }, { name: 'How it works', path: pth }], schema: [faqSchema(faqs)],
+  }), 0.9);
+}
+
+// ---------- compliance checker ----------
+{
+  const pth = '/septic-tank-checker/';
+  const body = `
+<div class="wrap content">
+${checkerHtml()}
+<section><h2>What the checker looks at</h2>
+<p>The check is based on the Environment Agency's general binding rules for small sewage discharges in England. The big questions are:</p>
+<ul>
+<li><strong>What kind of system you have.</strong> Septic tanks and treatment plants are treated differently.</li>
+<li><strong>Where the liquid goes.</strong> A septic tank must go to ground through a drainage field. A treatment plant can go to a stream that flows all year.</li>
+<li><strong>Whether it is working.</strong> The rules say a system that isn't in good working order must be repaired or replaced.</li>
+<li><strong>Whether you're selling.</strong> Sellers must give buyers a written description of the system.</li>
+</ul>
+<p>It can't check everything. A nearby public sewer, a protected wildlife site, or a private drinking water supply can all change the answer. A <a href="/septic-tank-survey/">septic tank survey</a> gives you a definite answer in writing.</p></section>
+<section><h2>Don't know where yours goes?</h2>
+<p>That's very common. Clues to look for:</p>
+<ul>
+<li>A pipe coming out into a ditch or stream bank near the tank</li>
+<li>A patch of extra-green or soggy grass in the garden (often a drainage field or soakaway)</li>
+<li>Old deeds or sale paperwork mentioning an "outfall"</li>
+<li>A small electric box or kiosk near the lids (likely a treatment plant)</li>
+</ul>
+<p>See <a href="/how-it-works/">how septic tanks and treatment plants work</a> for diagrams.</p></section>
+${relatedHtml(rel(['guides/general-binding-rules', 'guides/can-a-septic-tank-discharge-to-a-ditch', 'septic-tank-survey', 'selling-a-house-with-a-septic-tank']))}
+</div>
+${ctaBand()}`;
+  add(pth, page({
+    path: pth, areas,
+    title: 'Is My Septic Tank Compliant? 1-Minute Check | ' + cfg.brand,
+    description: 'Is your septic tank legal? Answer four quick questions for a plain-English answer based on the general binding rules for England. Free, and nothing is sent anywhere.',
+    h1: 'Is my septic tank compliant?',
+    lead: 'Four quick questions, a plain-English answer. Based on the Environment Agency\'s general binding rules for England.',
+    body, crumbs: [{ name: 'Home', path: '/' }, { name: 'Septic tank checker', path: pth }],
+  }), 0.8);
 }
 
 // ---------- service pages ----------
@@ -196,7 +335,7 @@ ${ctaBand('Get your fixed price')}`;
   add(pth, page({
     path: pth, areas,
     title: 'Septic Tank Replacement Cost UK (2026 Prices) | ' + cfg.brandShort,
-    description: `How much does it cost to replace a septic tank? Typical ${gbp(p.replacementTypicalLow)}â€“${gbp(p.replacementTypicalHigh)} for a house in Somerset and Dorset. What's included and what changes the price.`,
+    description: `How much does it cost to replace a septic tank? Typical ${gbp(p.replacementTypicalLow)}–${gbp(p.replacementTypicalHigh)} for a house in Somerset and Dorset. What's included and what changes the price.`,
     h1: 'Septic tank replacement cost',
     lead: `For a normal three or four bedroom house, replacing a septic tank with a sewage treatment plant typically costs ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}, all in. Here is what is included and what moves the price.`,
     body, crumbs: [{ name: 'Home', path: '/' }, { name: 'Prices', path: pth }], schema: [faqSchema(faqs)],
@@ -264,7 +403,7 @@ for (const a of areas) {
 <div><dt>Council</dt><dd>${esc(a.council)}</dd></div>
 <div><dt>Postcodes</dt><dd>${esc(a.postcode)}</dd></div>
 <div><dt>From Yeovil</dt><dd>${isBase ? 'Our base' : `about ${a.miles} miles`}</dd></div>
-<div><dt>Typical replacement</dt><dd>${gbp(p.replacementTypicalLow)}â€“${gbp(p.replacementTypicalHigh)}</dd></div>
+<div><dt>Typical replacement</dt><dd>${gbp(p.replacementTypicalLow)}–${gbp(p.replacementTypicalHigh)}</dd></div>
 </dl>
 <section><h2>Septic tanks and off-mains drainage around ${esc(a.name)}</h2>
 <p>${esc(a.local)}</p>
@@ -319,7 +458,7 @@ for (const g of countyGroups) {
 <p>Each town page explains the local picture: which council handles building control, which river the area drains to, and whether phosphate or other nutrient rules are likely to apply. That matters because the right system for a cottage on the Somerset Levels is often very different from one on the Dorset chalk or the Mendip limestone.</p>
 ${countyGroups.map(g => `<section><h2><a href="/areas/${g.slug}/">${g.name}</a></h2><ul class="area-pills">${areas.filter(g.filter).sort((x, y) => x.miles - y.miles).map(a => `<li><a href="/areas/${a.slug}/">${esc(a.name)}</a></li>`).join('')}</ul></section>`).join('')}
 </div>${ctaBand()}`;
-  add(pth, page({ path: pth, areas, title: 'Areas We Cover: Somerset, Dorset, Devon & Wiltshire | ' + cfg.brandShort,
+  add(pth, page({ path: pth, areas, title: 'Areas We Cover: Somerset, Dorset, Devon, Wiltshire | ' + cfg.brand,
     description: 'Septic tank replacement within an hour of Yeovil: Somerset, north and west Dorset, east Devon and south-west Wiltshire. Find your town.',
     h1: 'Areas we cover', lead: 'Yeovil and about an hour around.', body, crumbs: [{ name: 'Home', path: '/' }, { name: 'Areas', path: pth }] }), 0.8);
 }
@@ -351,7 +490,7 @@ ${countyGroups.map(g => `<section><h2><a href="/areas/${g.slug}/">${g.name}</a><
 <li><strong>Tidy.</strong> We protect your garden as far as we can and reinstate it when we finish.</li>
 <li><strong>Paperwork.</strong> A handover pack with everything you need to run the system and to sell your home one day.</li>
 </ul></section>
-<section><h2>Why "Hamstone"?</h2><p>Ham stone is the golden limestone from Ham Hill, a few miles from Yeovil, used on buildings across south Somerset and north Dorset. We liked a name that says local and built to last.</p></section>
+<section><h2>Why "Yeo"?</h2><p>The River Yeo runs through Yeovil, and gave the town its name. Our job is getting clean water back into rivers like it, so it felt like the right name for a Yeovil firm.</p></section>
 </div>${ctaBand()}`;
   add(pth, page({ path: pth, areas, title: 'About Us | ' + cfg.brand + ', Yeovil',
     description: `${cfg.brand} is a Yeovil-based septic tank replacement and treatment plant specialist covering Somerset, Dorset, east Devon and south-west Wiltshire.`,

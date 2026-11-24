@@ -1,4 +1,4 @@
-/* Hamstone Drainage. Colours and type: see brand/branding.md */
+/* Yeo Drainage. Colours and type: see brand/branding.md */
 :root {
   --green: #1E4D45;
   --green-dark: #163a34;
@@ -143,3 +143,75 @@ thead th { background: var(--stone); color: var(--green); }
   .mobile-call { display: block; position: fixed; left: .75rem; right: .75rem; bottom: .75rem; z-index: 6; text-align: center; background: var(--gold); color: var(--ink); font-weight: 700; padding: .85rem; border-radius: 10px; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
 }
 @media print { .site-header, .mobile-call, .cta-band, .site-footer { display: none; } }
+
+/* ---------- Visual components (v2) ---------- */
+.icon { width: 1.5em; height: 1.5em; flex: none; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2.5rem; align-items: center; }
+.hero-art img { width: 100%; height: auto; display: block; border-radius: 24px; box-shadow: 0 18px 40px rgba(0,0,0,.25); }
+.hero-points { list-style: none; padding: 0; margin: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.hero-points li { display: flex; align-items: center; gap: .4rem; color: #eef2ef; font-weight: 600; }
+.hero-points .icon { color: var(--gold); width: 1.2em; height: 1.2em; }
+.diagram { margin: 1.5rem 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: .5rem; }
+.diagram img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.diagram figcaption { font-size: .93rem; color: var(--muted); padding: .6rem .5rem .2rem; }
+.content > .diagram { max-width: 900px; }
+.diagram-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.diagram-pair .diagram { margin: 0; }
+/* service cards with icons */
+.card .card-icon { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 10px; background: var(--stone); color: var(--green); margin-bottom: .5rem; }
+/* journey */
+.journey-list { list-style: none; padding: 0 !important; display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .journey-list { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .journey-list { grid-template-columns: 1fr; } }
+.journey-list li { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.2rem; position: relative; }
+.journey-icon { display: inline-grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; background: var(--green); color: #fff; }
+.journey-num { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); font-weight: 700; margin-top: .6rem; }
+.journey-list strong { display: block; color: var(--green); font-size: 1.1rem; margin: .1rem 0 .3rem; }
+.journey-list li > span:last-child { color: var(--muted); font-size: .96rem; }
+.band .journey h2 { margin-top: 1rem; }
+/* pros and cons */
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+.pc-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem 1.3rem; background: #fff; }
+.pc-best { border: 2px solid var(--green); }
+.pc-card h3 { margin: 0; font-size: 1.25rem; }
+.pc-sub { color: var(--muted); margin: .2rem 0 .8rem; }
+.pc-card ul { list-style: none; padding: 0 !important; margin: 0; }
+.pc-card li { display: flex; gap: .55rem; align-items: flex-start; margin: .45rem 0; }
+.pc-card li .icon { width: 1.25em; height: 1.25em; margin-top: .15em; }
+.pc-card li.pro .icon { color: #2f7d4a; }
+.pc-card li.con .icon { color: #B5432F; }
+/* checker */
+.checker { background: var(--stone); border: 2px solid var(--gold); border-radius: 16px; padding: 1.5rem; margin: 2rem 0; }
+.ck-head h2 { margin: .4rem 0 .3rem; }
+.ck-badge { display: inline-block; background: var(--gold); color: var(--ink); font-weight: 700; font-size: .8rem; padding: .2rem .65rem; border-radius: 999px; text-transform: uppercase; letter-spacing: .05em; }
+.ck-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; margin-top: 1rem; }
+.ck-form > p { grid-column: 1 / -1; margin: 0; }
+.ck-q { border: 0; padding: 0; margin: 0; }
+.ck-q legend { font-weight: 700; color: var(--green); margin-bottom: .4rem; }
+.ck-q label { display: flex; gap: .55rem; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: .55rem .7rem; margin: .35rem 0; cursor: pointer; }
+.ck-q label:has(input:checked) { border-color: var(--green); box-shadow: 0 0 0 2px var(--green) inset; }
+.ck-q input { accent-color: var(--green); width: 1.1rem; height: 1.1rem; }
+.ck-error { color: #B5432F; font-weight: 600; }
+.ck-result { margin-top: 1.25rem; background: #fff; border-radius: 12px; padding: 1rem 1.25rem; border-left: 6px solid var(--water); }
+.ck-result h3 { margin: .2rem 0 .4rem; font-size: 1.3rem; }
+.ck-result.ck-bad { border-left-color: #B5432F; } .ck-result.ck-bad h3 { color: #B5432F; }
+.ck-result.ck-warn { border-left-color: var(--gold); }
+.ck-result.ck-good { border-left-color: #2f7d4a; } .ck-result.ck-good h3 { color: #2f7d4a; }
+.ck-result .btn-ghost { color: var(--green); }
+/* reassurance strip */
+.promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; list-style: none; padding: 0 !important; }
+.promise li { display: flex; gap: .75rem; align-items: flex-start; }
+.promise .icon { color: var(--green); width: 2rem; height: 2rem; background: var(--stone); padding: .35rem; border-radius: 8px; box-sizing: content-box; }
+.promise strong { display: block; color: var(--green); }
+.promise span { color: var(--muted); font-size: .95rem; }
+.section-lead { color: var(--muted); max-width: 65ch; margin-top: -.3rem; }
+@media (max-width: 1080px) {
+  .hero-grid, .diagram-pair, .pros-cons, .ck-form { grid-template-columns: 1fr; }
+  .hero-art { max-width: 480px; }
+}
+
+.zoom-hint { display: none; }
+@media (max-width: 700px) {
+  .zoom-hint { display: inline; font-style: italic; }
+  .glance dd { font-size: .98rem; }
+}

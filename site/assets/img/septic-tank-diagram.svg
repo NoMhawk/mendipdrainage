@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="st-t st-d" font-family="Segoe UI, Roboto, Arial, sans-serif">
+<title id="st-t">How a septic tank works</title>
+<desc id="st-d">Cutaway of a two-chamber septic tank. Waste flows in from the house. Solids sink as sludge, fats float as scum, and the liquid in the middle flows on to a drainage field, where the soil cleans it.</desc>
+<defs>
+<pattern id="st-soil" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#C9A57A"/><circle cx="3" cy="4" r="1.2" fill="#a8835a"/><circle cx="10" cy="10" r="1" fill="#a8835a"/></pattern>
+<pattern id="st-gravel" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#b9b2a2"/><circle cx="3" cy="3" r="2" fill="#8d8676"/><circle cx="8" cy="8" r="1.8" fill="#9c9585"/></pattern>
+<marker id="st-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1D2327"/></marker>
+</defs>
+<rect width="800" height="130" fill="#DCEFF2"/>
+<rect y="130" width="800" height="330" fill="url(#st-soil)"/>
+<rect y="122" width="800" height="12" fill="#6E9B4F"/>
+<!-- house -->
+<path d="M30 122V62L85 28L140 62V122Z" fill="#E9D3A6" stroke="#1D2327" stroke-width="3"/>
+<path d="M22 66L85 22L148 66" fill="none" stroke="#1E4D45" stroke-width="8" stroke-linejoin="round"/>
+<rect x="70" y="86" width="30" height="36" fill="#1E4D45"/>
+<!-- inlet pipe -->
+<path d="M110 122V176H232" fill="none" stroke="#5a5f63" stroke-width="12"/>
+<!-- tank -->
+<rect x="230" y="150" width="330" height="230" rx="18" fill="#9fb8bd" stroke="#1D2327" stroke-width="4"/>
+<rect x="234" y="168" width="322" height="26" fill="#d7c07c"/>
+<rect x="234" y="320" width="322" height="56" rx="12" fill="#7b5a3a"/>
+<rect x="392" y="154" width="10" height="120" fill="#1D2327"/>
+<rect x="392" y="300" width="10" height="20" fill="#1D2327"/>
+<!-- lids -->
+<rect x="285" y="116" width="50" height="10" rx="3" fill="#1D2327"/><rect x="300" y="126" width="20" height="26" fill="#5a5f63"/>
+<rect x="455" y="116" width="50" height="10" rx="3" fill="#1D2327"/><rect x="470" y="126" width="20" height="26" fill="#5a5f63"/>
+<!-- flow arrows -->
+<path d="M300 250C340 270 370 290 410 290C440 290 470 250 520 230" fill="none" stroke="#1D2327" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#st-arrow)"/>
+<!-- outlet -->
+<path d="M556 186H640" stroke="#5a5f63" stroke-width="12"/>
+<!-- drainage field -->
+<rect x="630" y="170" width="150" height="70" fill="url(#st-gravel)" stroke="#1D2327" stroke-width="2"/>
+<path d="M630 192H780" stroke="#2E7C88" stroke-width="8"/>
+<g fill="#2E7C88"><circle cx="655" cy="215" r="4"/><circle cx="690" cy="222" r="4"/><circle cx="725" cy="215" r="4"/><circle cx="760" cy="222" r="4"/><circle cx="672" cy="258" r="3.5"/><circle cx="742" cy="262" r="3.5"/><circle cx="706" cy="290" r="3"/></g>
+<!-- numbered labels -->
+<g font-size="15" fill="#1D2327">
+<circle cx="170" cy="200" r="15" fill="#C4943B"/><text x="170" y="206" text-anchor="middle" font-weight="700">1</text>
+<text x="20" y="225" font-weight="700">Waste in</text><text x="20" y="243">from toilets, sinks</text><text x="20" y="261">and showers</text>
+<circle cx="250" cy="180" r="13" fill="#C4943B"/><text x="250" y="185" text-anchor="middle" font-weight="700" font-size="13">2</text>
+<text x="262" y="100" font-weight="700">Scum floats</text><path d="M300 104V170" stroke="#1D2327" stroke-width="1.5"/>
+<circle cx="250" cy="348" r="13" fill="#C4943B"/><text x="250" y="353" text-anchor="middle" font-weight="700" font-size="13">3</text>
+<text x="150" y="410" font-weight="700">Solids sink as sludge</text><text x="150" y="428">(must be emptied regularly)</text><path d="M290 395V376" stroke="#1D2327" stroke-width="1.5"/>
+<circle cx="480" cy="236" r="13" fill="#C4943B"/><text x="480" y="241" text-anchor="middle" font-weight="700" font-size="13">4</text>
+<text x="400" y="410" font-weight="700">Second chamber settles</text><text x="400" y="428">out more solids</text><path d="M480 395V250" stroke="#1D2327" stroke-width="1.5"/>
+<circle cx="600" cy="160" r="15" fill="#C4943B"/><text x="600" y="166" text-anchor="middle" font-weight="700">5</text>
+<text x="590" y="320" font-weight="700">Liquid spreads into</text><text x="590" y="338">a drainage field.</text><text x="590" y="356" font-weight="700">The soil does the</text><text x="590" y="374" font-weight="700">real cleaning.</text>
+</g>
+<text x="190" y="38" font-size="22" font-weight="800" fill="#1E4D45">How a septic tank works</text>
+<text x="190" y="62" font-size="15" fill="#1D2327">No power and no moving parts. It only separates the solids:</text>
+<text x="190" y="82" font-size="15" fill="#1D2327">the liquid still needs cleaning by the soil.</text>
+</svg>

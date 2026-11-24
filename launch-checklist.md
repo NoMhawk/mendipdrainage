@@ -3,8 +3,9 @@
 Everything Rich needs to do or decide before the site goes live. Tick as you go.
 
 ## Decisions (Rich to update)
-- [ ] **Brand name.** Working name "Hamstone Drainage". Check Companies House and the IPO trade mark search, then confirm or pick another (see `brand/branding.md`). Change `brand`/`brandShort` in `src/config.js`, the logo SVGs, the OG image and the "Why Hamstone" section in `build.js`.
-- [ ] **Domain.** Check and buy, e.g. hamstonedrainage.co.uk (+ .com to protect it). Set `url` in `src/config.js`.
+- [x] **Brand name.** Yeo Drainage (chosen 24 Nov 2026).
+- [ ] Check "Yeo Drainage" on Companies House and the IPO trade mark search before registering the company.
+- [ ] **Domain.** Buy yeodrainage.com now (it was unregistered on 24 Nov 2026), plus yeodrainage.co.uk if free, pointed at the .com.
 - [ ] **Prices.** Confirm or change every figure in `src/config.js` → `prices` against real supplier quotes and labour costs. Confirm they include VAT.
 - [ ] **Claims on the site to confirm are true:** "usually 3 to 5 working days on site", "Part P registered electrician" for the power supply, "we prepare and submit the building control application", "service plans available", and the opening hours.
 - [ ] **Guarantee terms** for installs and workmanship, then add them to the site.
@@ -26,6 +27,8 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [ ] Contact form endpoint: set `formAction` in `src/config.js` (Formspree, Web3Forms or a Cloudflare Pages Function). Test it.
 - [ ] Check every town's road miles in Google Maps and fix `miles` in `src/data/areas.js`.
 - [ ] About page: add the real founder story and team photo (no invented history).
+- [ ] Have a designer refine the Yeo logo mark before printing vans and signs.
+- [ ] Replace or add to the SVG illustrations with real job photos once jobs are done.
 - [ ] Real photos of jobs (with customer permission, no house numbers).
 - [ ] `node build.js` shows no placeholder warnings, and `node scripts/check.js` shows 0 errors.
 

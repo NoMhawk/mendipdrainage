@@ -13,7 +13,7 @@ module.exports = [
     lead: 'If you have a septic tank or small sewage treatment plant in England, the general binding rules are the conditions you must meet to avoid needing an environmental permit. Here is what they mean for you.',
     sections: [
       { h2: 'What they are', html: `<p>The general binding rules are set by the Environment Agency under the Environmental Permitting Regulations 2016. The current version took effect on 2 October 2023. If your system meets them, you do not need a permit. They only cover domestic-type sewage.</p>` },
-      { h2: 'The headline rules', html: `
+      { h2: 'The headline rules', add: 'checker', html: `
 <ul>
 <li><strong>Septic tanks must not discharge to a watercourse.</strong> They must go to ground through a drainage field.</li>
 <li><strong>Treatment plants may discharge to a watercourse</strong> that flows all year, or to a drainage field.</li>
@@ -23,7 +23,7 @@ module.exports = [
 <li><strong>Maintenance:</strong> maintain it as the maker says, and get it emptied before it is full, at least yearly or as the maker says, by a registered waste carrier.</li>
 <li><strong>Selling:</strong> you must tell the buyer in writing about the system, where it is, any changes, how to maintain it and any records.</li>
 </ul>` },
-      { h2: 'If your septic tank goes to a stream or ditch', html: `<p>This has not been allowed since the rules changed, and the old deadline of 1 January 2020 has passed. You need to either connect to the mains sewer, replace the tank with a <a href="/sewage-treatment-plant-installation/">treatment plant</a>, or install a <a href="/drainage-field-installation/">drainage field</a>. GOV.UK says to do it as soon as possible, with plans in place within a reasonable time, usually 12 months.</p>` },
+      { h2: 'If your septic tank goes to a stream or ditch', fig: { src: 'before-after.svg', alt: 'Before: an old septic tank sending dirty liquid into a ditch, marked not allowed. After: a new treatment plant sending clean water to a flowing stream, marked allowed.', caption: 'The most common upgrade: old septic tank to ditch, replaced by a treatment plant to a flowing stream.' }, html: `<p>This has not been allowed since the rules changed, and the old deadline of 1 January 2020 has passed. You need to either connect to the mains sewer, replace the tank with a <a href="/sewage-treatment-plant-installation/">treatment plant</a>, or install a <a href="/drainage-field-installation/">drainage field</a>. GOV.UK says to do it as soon as possible, with plans in place within a reasonable time, usually 12 months.</p>` },
       { h2: 'When you cannot use the rules', html: `
 <p>For discharges that started on or after 1 January 2015, you cannot rely on the general binding rules (and need to connect to the sewer or get a permit) if, for example:</p>
 <ul>
@@ -57,10 +57,10 @@ module.exports = [
     h1: 'Septic tank vs sewage treatment plant',
     lead: 'They look similar from the garden, but they work differently and the rules treat them differently. The main question is where the water goes.',
     sections: [
-      { h2: 'How each one works', html: `
+      { h2: 'How each one works', fig: [{ src: 'septic-tank-diagram.svg', alt: 'Cutaway of a septic tank: waste in, scum floats, sludge sinks, liquid flows out to a drainage field where the soil cleans it.', caption: 'A septic tank separates solids. The soil does the cleaning.' }, { src: 'treatment-plant-diagram.svg', alt: 'Cutaway of a sewage treatment plant: solids settle, an air pump feeds bacteria that clean the water, it settles again and clean water flows out.', caption: 'A treatment plant cleans the water itself using air and natural bacteria.' }], html: `
 <p><strong>Septic tank:</strong> a tank with two or more chambers. Solids sink, scum floats, and the liquid flows out. No power, no moving parts. The liquid is still dirty, so it must be cleaned by the soil in a drainage field.</p>
 <p><strong>Treatment plant:</strong> settles the solids too, but then adds air so bacteria break down the waste, and settles it again. Needs electricity. The water leaving it is much cleaner.</p>` },
-      { h2: 'Side by side', html: `
+      { h2: 'Side by side', add: 'proscons', html: `
 <table>
 <thead><tr><th></th><th>Septic tank</th><th>Treatment plant</th></tr></thead>
 <tbody>
@@ -93,7 +93,7 @@ module.exports = [
     h1: 'Can a septic tank discharge into a ditch or stream?',
     lead: 'No. In England, a septic tank must not discharge directly to a watercourse. That includes streams, rivers and ditches. If yours does, it needs to be upgraded.',
     sections: [
-      { h2: 'What the rules say', html: `<p>The general binding rules for surface water discharges only allow a small sewage treatment plant to discharge to a watercourse. Where a septic tank does, GOV.UK says you must replace or upgrade it as soon as possible, with plans in place within a reasonable time, usually 12 months.</p>` },
+      { h2: 'What the rules say', fig: { src: 'before-after.svg', alt: 'Before: an old septic tank sending dirty liquid into a ditch, marked not allowed. After: a new treatment plant sending clean water to a flowing stream, marked allowed.', caption: 'The most common upgrade: old septic tank to ditch, replaced by a treatment plant to a flowing stream.' }, html: `<p>The general binding rules for surface water discharges only allow a small sewage treatment plant to discharge to a watercourse. Where a septic tank does, GOV.UK says you must replace or upgrade it as soon as possible, with plans in place within a reasonable time, usually 12 months.</p>` },
       { h2: 'What about a treatment plant to a ditch?', html: `<p>Even a treatment plant can only discharge to surface water that <strong>flows throughout the year</strong>. A ditch that dries up in summer does not count (except in drought). An enclosed pond or lake is not allowed either.</p>` },
       { h2: 'How do I know where mine goes?', html: `<p>Many owners don't know. Clues: a pipe coming out into a ditch or stream bank near the tank, no wet patch or field in the garden, or old deeds mentioning an outfall. A <a href="/septic-tank-survey/">septic tank survey</a> will find it.</p>` },
       { h2: 'Your options', html: `
@@ -151,7 +151,7 @@ module.exports = [
     lead: 'People use the words to mean the same thing. For sewage, they are not, and the difference can decide whether your system meets the rules.',
     sections: [
       { h2: 'Soakaway', html: `<p>A soakaway is usually a pit filled with rubble or crates, or a chamber of concrete rings, that lets water soak into the ground at one point. It is designed for <strong>rainwater</strong>. For sewage, the general binding rules say a soakaway installed after December 2007 is not allowed, and shafts or concrete rings should be avoided for new discharges.</p>` },
-      { h2: 'Drainage field', html: `<p>A drainage field is a network of perforated pipes laid in gravel trenches, spreading the effluent thinly over a wide area so the soil can clean it. For sewage, this is what the rules require, built to BS 6297:2007 and designed from a <a href="/guides/percolation-test/">percolation test</a>.</p>` },
+      { h2: 'Drainage field', fig: { src: 'drainage-field-plan.svg', alt: 'Plan of a garden with a drainage field of perforated pipes in gravel trenches, at least 15 metres from the house and 10 metres from a stream, tank within 30 metres of tanker access.', caption: 'Key distances from Approved Document H.' }, html: `<p>A drainage field is a network of perforated pipes laid in gravel trenches, spreading the effluent thinly over a wide area so the soil can clean it. For sewage, this is what the rules require, built to BS 6297:2007 and designed from a <a href="/guides/percolation-test/">percolation test</a>.</p>` },
       { h2: 'What if I have an old soakaway?', html: `<p>Older systems installed before the standards came in may still be acceptable if they work and cause no pollution. If yours is failing, being replaced, or might be discharging straight into groundwater, it needs a proper drainage field. See <a href="/drainage-field-installation/">drainage field installation</a>.</p>` },
     ],
     faqs: [],
@@ -253,7 +253,7 @@ module.exports = [
     lead: 'Installing a new septic tank or treatment plant needs building regulations approval. Approved Document H, part H2, sets out how it should be done.',
     sections: [
       { h2: 'You need approval', html: `<p>GOV.UK says you need building regulations approval to install a new septic tank or small sewage treatment plant, and you may need planning permission too. If your current system was never approved, you may need to apply when you change it.</p>` },
-      { h2: 'Key distances from Approved Document H', html: `
+      { h2: 'Key distances from Approved Document H', fig: { src: 'drainage-field-plan.svg', alt: 'Plan of a garden with a drainage field of perforated pipes in gravel trenches, at least 15 metres from the house and 10 metres from a stream, tank within 30 metres of tanker access.', caption: 'Key distances from Approved Document H.' }, html: `
 <table>
 <thead><tr><th>What</th><th>Distance</th></tr></thead>
 <tbody>
@@ -285,7 +285,7 @@ module.exports = [
     h1: 'Choosing a sewage treatment plant',
     lead: 'There is no single best plant. The right one depends on your site, budget and how much you want to spend running it. Here is what to compare.',
     sections: [
-      { h2: 'What to compare', html: `
+      { h2: 'What to compare', fig: { src: 'treatment-plant-diagram.svg', alt: 'Cutaway of a sewage treatment plant: solids settle, an air pump feeds bacteria that clean the water, it settles again and clean water flows out.', caption: 'A treatment plant cleans the water itself using air and natural bacteria.' }, html: `
 <ul>
 <li><strong>Certification:</strong> BS EN 12566-3, and ideally on British Water's approved equipment list.</li>
 <li><strong>Size:</strong> sized to British Water <em>Flows and Loads</em> for your bedrooms.</li>

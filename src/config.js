@@ -3,17 +3,17 @@
 // Rich to update every TODO before launch.
 
 module.exports = {
-  brand: 'Hamstone Drainage',          // NOT DECIDED: working name, see brand/branding.md
-  brandShort: 'Hamstone',
+  brand: 'Yeo Drainage',               // Chosen by Rich 2026-11-24. yeodrainage.com was unregistered on that date: Rich to buy.
+  brandShort: 'Yeo Drainage',
   tagline: 'Septic tank replacement, done properly.',
-  url: 'https://www.hamstonedrainage.co.uk', // TODO: confirm once the domain is bought (no trailing slash)
+  url: 'https://www.yeodrainage.com', // Rich to update if www/non-www choice changes (no trailing slash)
   baseTown: 'Yeovil',
   region: 'Somerset',
 
   phone: 'TODO 01935 000000',          // TODO: real number. Shown as "Call us" until set.
-  email: 'TODO hello@hamstonedrainage.co.uk',
+  email: 'TODO hello@yeodrainage.com',
   formAction: 'TODO',                  // TODO: form endpoint (e.g. Formspree or a Cloudflare Pages Function). Until set, the form shows phone/email instead.
-  companyName: 'TODO Hamstone Drainage Ltd', // TODO: registered company name and number for the footer
+  companyName: 'TODO Yeo Drainage Ltd', // TODO: registered company name and number for the footer
   companyNumber: 'TODO',
   hours: 'Monday to Friday 8am to 6pm, Saturday 8am to 12pm', // TODO: confirm
 

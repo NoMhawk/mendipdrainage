@@ -14,7 +14,7 @@ Yeovil and everywhere within about an hour's drive: south Somerset, north and we
 Home sellers, buyers, rural homeowners, self-builders, small developers, estate agents and conveyancers. Detail and voice: `brand/branding.md`.
 
 ## Brand
-Working name **Hamstone Drainage** (NOT DECIDED). Tagline "Septic tank replacement, done properly." Colours, logo, voice: `brand/branding.md`.
+**Yeo Drainage** (chosen 24 Nov 2026; domain yeodrainage.com, to buy). Tagline "Septic tank replacement, done properly." Colours, logo, voice: `brand/branding.md`.
 
 ## What makes us different (only claim what's true)
 1. Real local knowledge: every town page explains the council, catchment and phosphate situation.
@@ -41,6 +41,6 @@ Working name **Hamstone Drainage** (NOT DECIDED). Tagline "Septic tank replaceme
 - Phone: NOT DECIDED
 - Email: NOT DECIDED
 - Address / service base: Yeovil (exact address NOT DECIDED; may not show if run from home)
-- Domain: NOT DECIDED
+- Domain: yeodrainage.com (unregistered on 24 Nov 2026; Rich to buy, plus yeodrainage.co.uk if free)
 - Insurance, accreditations, guarantee terms: NOT DECIDED
 - Prices: draft ranges in `src/config.js`, to be confirmed by Rich

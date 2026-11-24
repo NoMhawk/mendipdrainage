@@ -63,6 +63,12 @@ for (const f of htmlFiles) {
   const visible = text(html);
   if (/\bTODO\b/.test(visible)) errors.push(`${u}: visible TODO text`);
   if (/undefined|NaN|\[object Object\]/.test(visible)) errors.push(`${u}: template error text (undefined/NaN/object)`);
+  if (/â€|Â|Ã|�/.test(html)) errors.push(`${u}: garbled characters (encoding problem, e.g. "â€“")`);
+  for (const m of html.matchAll(/<img\b[^>]*>/g)) {
+    if (!/\balt="[^"]+"/.test(m[0])) errors.push(`${u}: image without alt text`);
+    const src = (m[0].match(/src="([^"]+)"/) || [])[1];
+    if (src && src.startsWith('/') && !exists(src)) errors.push(`${u}: missing image ${src}`);
+  }
   if (/<p>\s*<\/p>/.test(html)) warns.push(`${u}: empty <p>`);
   const main = (html.match(/<main[\s\S]*<\/main>/) || [''])[0];
   mains[u] = text(main);

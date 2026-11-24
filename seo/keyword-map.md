@@ -22,6 +22,13 @@ Rule: **one main keyword per page.** Never build two pages that target the same 
 | `/new-build-off-mains-drainage/` | off mains drainage for new builds | self build sewage treatment plant, barn conversion drainage, planning drainage strategy | commercial |
 | `/phosphate-credits-somerset/` | phosphate credits Somerset | nutrient neutrality septic tank, free septic tank upgrade Somerset, Somerset Levels phosphates | research / commercial |
 
+## Explainer and tools
+
+| URL | Main keyword | Supporting |
+|---|---|---|
+| `/how-it-works/` | how does a septic tank work | how does a sewage treatment plant work, septic tank diagram, treatment plant diagram |
+| `/septic-tank-checker/` | is my septic tank compliant | is my septic tank legal, septic tank compliance check |
+
 ## Price pages
 
 | URL | Main keyword | Supporting |

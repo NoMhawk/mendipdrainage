@@ -1,68 +1,75 @@
 # Branding
 
-Status: **proposal, not decided.** The name, colours and logo below are a working brand so the site can be built and reviewed. Rich decides the final name before any domain is bought. Everything brand-related is set in `src/config.js` so a rename is a one-line change.
+Status: **name decided** (Yeo Drainage, chosen by Rich on 24 November 2026). Colours, logo and illustration style below are the working design. Everything brand-related is set in `src/config.js` and `static/assets/`.
 
 ## Who we are talking to
-1. **Home sellers** with a septic tank. A buyer's survey has flagged it. They are stressed, short of time, and want it sorted and signed off so the sale goes through.
-2. **Home buyers** who want to know what they are taking on and what it will cost.
-3. **Rural homeowners** whose tank is failing, smelling, or discharging to a stream.
-4. **Self-builders and small developers** who need off-mains drainage for building control and planning.
-5. **Estate agents and conveyancers** in the area who need a firm they can recommend.
+**Main audience:** a homeowner aged 30+, usually with no practical or trade experience. They have just found out (often from a buyer's survey, a solicitor or a smell in the garden) that their septic tank is a problem. They:
+- don't know how a septic tank or treatment plant works, and feel a bit embarrassed asking
+- worry about cost, mess in the garden, being ripped off, and the law
+- want a professional, properly run firm that explains things and prices fairly
+- will compare two or three firms online before calling
 
-Most are 40+, own rural or village homes, value plain answers, and distrust cowboys. They are not experts and are worried about cost, mess and the law.
+Also: sellers and buyers under time pressure, self-builders, estate agents and conveyancers.
 
-## Name (working): **Hamstone Drainage**
-Why: Ham stone is the golden limestone from Ham Hill, five miles from Yeovil. It is on almost every old building in south Somerset and north Dorset. The name says local, solid and long-lasting without being twee. A web search (Nov 2026) found no drainage firm using the name.
+**What they need from the site, in order:** "Do I have a problem?" → "How does this stuff work?" → "What will it cost and how disruptive is it?" → "Can I trust these people?" → "How do I get in touch?"
 
-Other options considered:
-- **SoakAway South West**: matches the repo name and the word people search, but "soakaway" is technically wrong for sewage (rainwater soakaways are banned for new sewage discharges), so it undercuts our expert position.
-- **Levels & Vale Drainage**: local, but harder to say on the phone.
-- Avoid: anything with "Yeo Valley" (a big food brand) or "Wessex Water" style names (sounds like the water company).
+So the site leads with **simple diagrams, a 1-minute checker, clear prices and a step-by-step of what happens**, and puts a contact button at every step.
 
-**Rich to update:** check Companies House and the Intellectual Property Office trade mark search for "Hamstone", then check domain availability: hamstonedrainage.co.uk, hamstonedrainage.com, hamstone-drainage.co.uk. Also consider a keyword domain to redirect, e.g. septictankreplacementyeovil.co.uk. (Exact-match domains give little ranking help now, so the brand domain should be the main site.)
+## Name: **Yeo Drainage**
+Named after the River Yeo, which runs through Yeovil (the town is named after it). Short, local, easy to say on the phone. The business is about getting clean water back into rivers like the Yeo.
+
+- Domain: **yeodrainage.com** (no hyphens). Unregistered when checked on 24 Nov 2026 via the Verisign .com registry. **Rich to update:** buy it, and yeodrainage.co.uk if free.
+- **Rich to update:** check "Yeo Drainage" on Companies House and the IPO trade mark search before registering the company.
+- Small risk: "Yeo" may remind people of Yeo Valley (dairy brand). Different trade, so low risk, but never use green-and-white dairy styling or the words "Yeo Valley".
 
 ## Tagline
 **"Septic tank replacement, done properly."**
 Supporting line: "From survey to sign-off, one local team. Yeovil and an hour around."
 
 ## Voice
-- Plain English. Short sentences. No jargon without a one-line explanation.
-- Calm and straight. We explain the rules, the options and the cost, including when the customer doesn't need us.
-- Confident, never scary. We never use fear tactics or exaggerate fines.
-- First person plural ("we") for the firm. Second person ("you") for the reader.
-- UK spelling.
+- Plain English. Short sentences. Explain every technical word the first time (e.g. "effluent, the liquid that leaves the tank").
+- Calm, friendly and straight. Assume the reader is clever but new to this.
+- Honest about cost and disruption. Say when someone doesn't need us.
+- Never scary. No fear tactics, no exaggerated fines.
+- "We" for the firm, "you" for the reader. UK spelling.
 
-Words we use: replace, upgrade, sorted, signed off, in writing, fixed quote, honest, local.
-Words we avoid: cheap, best in the UK, guaranteed compliance (we can't guarantee the Environment Agency), any invented numbers.
+Words we use: replace, upgrade, sorted, signed off, in writing, fixed quote, honest, local, clean water.
+Words we avoid: cheap, best in the UK, guaranteed compliance, any invented numbers, jargon without explanation.
 
 ## Colours
 
 | Name | Hex | Use |
 |---|---|---|
 | River green | `#1E4D45` | Primary: header, buttons, headings |
-| Hamstone gold | `#C4943B` | Accent: highlights, icons, underlines. Use with dark text only |
-| Limestone | `#F6F1E6` | Page background panels |
+| Stone gold | `#C4943B` | Accent: highlights, numbers, icons. Dark text only on it |
+| Limestone | `#F6F1E6` | Panels and page heads |
 | Ink | `#1D2327` | Body text |
-| White | `#FFFFFF` | Cards, main background |
-| Clear water | `#2E7C88` | Links, secondary accent |
+| Clear water | `#2E7C88` | Links, water in diagrams |
+| Sky | `#DCEFF2` | Diagram skies and light water |
+| Earth | `#8A6A45` | Soil in diagrams |
+| Warning red | `#B5432F` | "Not allowed" marks in diagrams only |
 
-Contrast: white on river green and ink on limestone both pass WCAG AA. Gold is not used for small text on white.
+Stone gold nods to the golden Ham stone of Yeovil's buildings. Contrast: white on river green and ink on limestone pass WCAG AA.
 
 ## Typography
-System font stack (fast, no external requests, no tracking): `-apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`. Headings in the same stack, bold, slightly tighter spacing. If a brand font is wanted later, self-host it (no Google Fonts CDN, for privacy).
+System font stack (fast, private): `-apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`. No web fonts.
 
 ## Logo
-`site/assets/logo.svg`: a rounded stone block in Hamstone gold with a wave line in river green through it (stone + water), then the wordmark "Hamstone" in river green and "DRAINAGE" in small spaced capitals. Favicon is the mark alone (`site/assets/favicon.svg`).
+`static/assets/logo.svg` and `favicon.svg`: a river-green rounded square with a **"Y" made of two streams joining into one**, which is the river confluence and the Y of Yeo in one mark. A stone-gold drop sits where the streams meet. Wordmark "Yeo" in bold, "DRAINAGE" in small spaced capitals.
 
-**Rich to update:** have a designer refine it once the name is final. Van livery and site boards should use the same mark, green vans with gold mark.
+**Rich to update:** have a designer refine the mark before printing vans and signs.
 
-## Photography (when available)
-Real jobs only: before/after, the digger on site, the plant going in, the reinstated garden. Real team in branded workwear. No stock photos of smiling models. Ask customers' permission and never show house numbers or addresses.
+## Illustration and diagram style
+We have no job photos yet, and the audience needs things explained, so the site uses **flat, simple illustrations and cutaway diagrams**, all hand-made SVG in `static/assets/img/`:
+- Cutaways of a septic tank and a treatment plant, with numbered steps
+- Before/after: old tank to a ditch vs new plant to a stream
+- Drainage field plan with the key distances
+- Icons for each step of the job
+
+Rules: brand colours only, thick friendly outlines, numbered labels matching the text, real alt text on every image. Diagrams must match `research/regulations.md`.
+
+## Photography (later)
+Add real photos as soon as jobs are done: before/after, the plant going in, the reinstated garden, the team in branded workwear. Ask permission; never show house numbers. No stock photos of smiling models.
 
 ## Trust signals to earn (don't claim until true)
-- British Water accredited service engineer
-- Manufacturer approved installer (Klargester, Marsh, Tricel, etc.)
-- TrustMark / Checkatrade / Which? Trusted Trader
-- Public liability insurance (state the cover)
-- Google reviews
-- Written guarantee terms
+British Water accredited service engineer, manufacturer approved installer, TrustMark / Checkatrade, insurance cover, Google reviews, written guarantee.

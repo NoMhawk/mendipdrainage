@@ -18,7 +18,7 @@ module.exports = [
       ['Area', 'Yeovil and about an hour around'],
     ],
     sections: [
-      { h2: 'When does a septic tank need replacing?', html: `
+      { h2: 'When does a septic tank need replacing?', fig: { src: 'before-after.svg', alt: 'Before: an old septic tank sending dirty liquid into a ditch, marked not allowed. After: a new treatment plant sending clean water to a flowing stream, marked allowed.', caption: 'The most common upgrade: old septic tank to ditch, replaced by a treatment plant to a flowing stream.' }, html: `
 <p>There are three common reasons, and they often overlap.</p>
 <ul>
 <li><strong>It goes to a stream, river or ditch.</strong> Under the Environment Agency's general binding rules, a septic tank must not discharge straight to a watercourse. If yours does, GOV.UK says you must replace or upgrade it as soon as possible, with plans in place, usually within 12 months.</li>
@@ -33,7 +33,7 @@ module.exports = [
 <li><strong>Replace the tank with a sewage treatment plant.</strong> A treatment plant cleans the waste water much more thoroughly than a septic tank, so it can discharge to a flowing watercourse under the rules. This is the most common fix, especially where the ground drains poorly. See <a href="/sewage-treatment-plant-installation/">sewage treatment plant installation</a>.</li>
 <li><strong>Keep a septic tank and add a drainage field.</strong> If the ground drains well, a septic tank can discharge to a properly designed drainage field instead of the stream. This needs a percolation test and enough space. See <a href="/drainage-field-installation/">drainage field installation</a>.</li>
 </ol>` },
-      { h2: 'How a replacement works, step by step', html: `
+      { h2: 'How a replacement works', add: 'journey', html: `<p>Here is what happens from your first call to the day we hand over. You deal with one team throughout.</p>` }, { h2: 'The detail, for those who want it', html: `
 <ol class="steps">
 <li><strong>Free site visit.</strong> We find the tank, the outfall and the pipe runs, ask how many bedrooms and people, and look at access for a digger.</li>
 <li><strong>Survey and tests.</strong> Where a drainage field is an option, we dig trial holes and run a percolation test to Approved Document H. We check the sewer distance and any protected sites nearby.</li>
@@ -75,7 +75,7 @@ module.exports = [
       ['Servicing', 'Plans available after install'],
     ],
     sections: [
-      { h2: 'What a treatment plant does', html: `
+      { h2: 'What a treatment plant does', fig: { src: 'treatment-plant-diagram.svg', alt: 'Cutaway of a sewage treatment plant: solids settle, an air pump feeds bacteria that clean the water, it settles again and clean water flows out.', caption: 'A treatment plant cleans the water itself using air and natural bacteria.' }, html: `
 <p>A septic tank only lets solids settle out. The liquid that leaves it is still dirty, which is why it must go into a drainage field to be cleaned by the soil.</p>
 <p>A sewage treatment plant goes further. It settles the solids, then pumps air through the liquid so bacteria can break down the waste, then settles it again. The water that comes out is far cleaner. That is why a treatment plant can discharge to a flowing watercourse under the general binding rules, where a septic tank cannot.</p>
 <p>The trade-off: a plant needs electricity, a yearly service, and regular emptying. Read <a href="/guides/septic-tank-vs-treatment-plant/">septic tank vs treatment plant</a> for the full comparison.</p>` },
@@ -125,7 +125,7 @@ module.exports = [
     ],
     sections: [
       { h2: 'What is a conversion unit?', html: `<p>A conversion (or retrofit) unit is a kit that sits inside an old septic tank and adds air and extra treatment, turning it into something close to a treatment plant. It means less digging than a full replacement.</p>` },
-      { h2: 'The rule you need to know', html: `
+      { h2: 'The rule you need to know', fig: { src: 'before-after.svg', alt: 'Before: an old septic tank sending dirty liquid into a ditch, marked not allowed. After: a new treatment plant sending clean water to a flowing stream, marked allowed.', caption: 'The most common upgrade: old septic tank to ditch, replaced by a treatment plant to a flowing stream.' }, html: `
 <p>The general binding rules for discharges to surface water say a retrofit system inside an existing septic tank is only acceptable if it was installed <strong>before 2007</strong>. Any reedbed or secondary treatment unit fitted after a septic tank must meet the relevant British Standard. If it doesn't, you have to upgrade to a treatment plant or apply for a permit.</p>
 <p>In practice, if your tank discharges to a stream or ditch, a new conversion unit is unlikely to be the answer unless it is a certified system that meets the standard. Check with the maker and the Environment Agency before you pay for one.</p>` },
       { h2: 'When conversion can make sense', html: `
@@ -184,7 +184,7 @@ module.exports = [
 <li>Is it inside your boundary? If not, are there rights to access and maintain it?</li>
 </ul>
 <p>Mortgage lenders may also want answers. Having them ready avoids weeks of back and forth.</p>` },
-      { h2: 'How we help sellers', html: `
+      { h2: 'How we help sellers', add: 'checker', html: `
 <ol class="steps">
 <li><strong>Pre-sale survey.</strong> We find and inspect the system, check where it discharges, and write a clear report you can hand to your agent and solicitor. See <a href="/septic-tank-survey/">septic tank surveys</a>.</li>
 <li><strong>Fixed quote if work is needed.</strong> So you and the buyer can agree who pays, or agree a price reduction based on a real figure, not a guess.</li>
@@ -218,7 +218,7 @@ module.exports = [
       ['Includes', 'Discharge point, condition, compliance view'],
     ],
     sections: [
-      { h2: 'What we check', html: `
+      { h2: 'What we check', fig: { src: 'septic-tank-diagram.svg', alt: 'Cutaway of a septic tank: waste in, scum floats, sludge sinks, liquid flows out to a drainage field where the soil cleans it.', caption: 'A septic tank separates solids. The soil does the cleaning.' }, html: `
 <ul>
 <li>Type of system: septic tank, treatment plant or cesspit, and the make and model if known</li>
 <li>Size compared with the number of bedrooms</li>
@@ -259,7 +259,7 @@ module.exports = [
     ],
     sections: [
       { h2: 'Drainage field or soakaway?', html: `<p>People often say "soakaway" for any hole that takes waste water away. For sewage, the rules are clear: a septic tank must discharge to ground through a <strong>drainage field</strong> built to BS 6297:2007. A rainwater-style soakaway installed after December 2007 is not allowed for sewage. Read <a href="/guides/drainage-field-vs-soakaway/">drainage field vs soakaway</a>.</p>` },
-      { h2: 'How we design one', html: `
+      { h2: 'How we design one', fig: { src: 'drainage-field-plan.svg', alt: 'Plan of a garden with a drainage field of perforated pipes in gravel trenches, at least 15 metres from the house and 10 metres from a stream, tank within 30 metres of tanker access.', caption: 'Key distances from Approved Document H.' }, html: `
 <ol class="steps">
 <li><strong>Trial hole.</strong> At least 2m deep, to find the winter water table. It must not come within 1m of the pipes.</li>
 <li><strong>Percolation test.</strong> We time how fast water soaks away, at least three times in at least two holes, as Approved Document H sets out. The result (Vp) needs to be between 12 and 100.</li>

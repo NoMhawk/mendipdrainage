@@ -15,16 +15,16 @@ function phoneLabel() {
 }
 
 const NAV = [
+  ['/how-it-works/', 'How it works'],
   ['/septic-tank-replacement/', 'Septic tank replacement'],
   ['/sewage-treatment-plant-installation/', 'Treatment plants'],
   ['/selling-a-house-with-a-septic-tank/', 'Selling a house'],
   ['/septic-tank-replacement-cost/', 'Prices'],
   ['/areas/', 'Areas'],
   ['/guides/', 'Guides'],
-  ['/contact/', 'Contact'],
 ];
 
-const LOGO = `<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="3" y="7" width="42" height="34" rx="7" fill="#C4943B"/><path d="M3 27c6-5 11-5 17 0s11 5 17 0 6-3 8-2v9a7 7 0 0 1-7 7H10a7 7 0 0 1-7-7z" fill="#1E4D45"/><path d="M9 20c4-3 8-3 12 0" stroke="#F6F1E6" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`;
+const LOGO = `<svg class="logo-mark" viewBox="0 0 52 52" aria-hidden="true" focusable="false"><rect x="2" y="2" width="48" height="48" rx="11" fill="#F6F1E6"/><path d="M13 11c0 9 4 14 13 19M39 11c0 9-4 14-13 19M26 30v13" stroke="#1E4D45" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="26" cy="29" r="4.5" fill="#C4943B"/></svg>`;
 
 function header(path) {
   const links = NAV.map(([href, label]) => {
@@ -34,7 +34,7 @@ function header(path) {
   return `<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="logo" href="/" aria-label="${esc(cfg.brand)} home">${LOGO}<span class="logo-text"><strong>${esc(cfg.brandShort)}</strong><small>DRAINAGE</small></span></a>
+    <a class="logo" href="/" aria-label="${esc(cfg.brand)} home">${LOGO}<span class="logo-text"><strong>${esc(cfg.brand.split(' ')[0])}</strong><small>DRAINAGE</small></span></a>
     <nav aria-label="Main"><input type="checkbox" id="nav-toggle" class="nav-toggle"><label for="nav-toggle" class="nav-button">Menu</label><ul class="nav">${links}</ul></nav>
     <a class="btn btn-gold header-cta" href="${phoneHref()}">${phoneLabel()}</a>
   </div>
@@ -181,16 +181,84 @@ ${allSchema.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</s
 ${header(path)}
 ${breadcrumbHtml(crumbs)}
 <main id="main">
-<div class="${hero ? 'hero' : 'page-head'}"><div class="wrap">
+${hero ? `<div class="hero"><div class="wrap hero-grid"><div>
 <h1>${h1}</h1>
 ${lead ? `<p class="lead">${lead}</p>` : ''}
-${hero ? `<p class="hero-ctas"><a class="btn btn-gold" href="/contact/">Book a free site visit</a> <a class="btn btn-ghost" href="/septic-tank-replacement-cost/">See typical prices</a></p>` : ''}
-</div></div>
+<p class="hero-ctas"><a class="btn btn-gold" href="/contact/">Book a free site visit</a> <a class="btn btn-ghost" href="#checker">Is my tank compliant?</a></p>
+<ul class="hero-points"><li>${ICONS.tick}Free site visit</li><li>${ICONS.tick}Fixed written quotes</li><li>${ICONS.tick}Building control handled</li></ul>
+</div><div class="hero-art"><img src="/assets/img/hero-cottage.svg" alt="A stone cottage with a new sewage treatment plant in the garden and a clean stream running past" width="640" height="440"></div></div></div>` : `<div class="page-head"><div class="wrap">
+<h1>${h1}</h1>
+${lead ? `<p class="lead">${lead}</p>` : ''}
+</div></div>`}
 ${body}
 </main>
 ${footer(areas)}
+<script src="/assets/site.js" defer></script>
 </body>
 </html>`;
 }
 
-module.exports = { page, esc, gbp, abs, isTodo, faqHtml, faqSchema, ctaBand, relatedHtml, phoneHref, phoneLabel, cfg };
+// ---------- visual components ----------
+const I = (d) => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const ICONS = {
+  visit: I('<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 12l3-3 3 3v2H8z"/>'),
+  quote: I('<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h7M9 17h5"/>'),
+  approval: I('<rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 2h6v4H9z"/><path d="M9 14l2 2 4-4"/>'),
+  dig: I('<path d="M2 18h12v3H2z"/><path d="M4 18v-5h6l2 5"/><path d="M10 13l4-7 5 2-2 5h-3"/>'),
+  power: I('<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>'),
+  handover: I('<path d="M3 11l9-7 9 7v10H3z"/><path d="M8 15l3 3 5-6"/>'),
+  pound: I('<circle cx="12" cy="12" r="9"/><path d="M15 8.5a3 3 0 0 0-5 2.2V16h6M8.5 13h5"/>'),
+  shield: I('<path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>'),
+  clock: I('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+  drop: I('<path d="M12 2.5S5 10 5 15a7 7 0 0 0 14 0c0-5-7-12.5-7-12.5z"/><path d="M9 15a3 3 0 0 0 3 3"/>'),
+  house: I('<path d="M3 11l9-7 9 7"/><path d="M5 10v11h14V10"/><path d="M10 21v-6h4v6"/>'),
+  tick: I('<path d="M5 12l4 4 10-10"/>'),
+  cross: I('<path d="M6 6l12 12M18 6L6 18"/>'),
+  chat: I('<path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/>'),
+};
+
+function figure(src, alt, caption, cls = '') {
+  const [w, h] = { 'septic-tank-diagram.svg': [800, 460], 'treatment-plant-diagram.svg': [800, 480], 'before-after.svg': [800, 400], 'drainage-field-plan.svg': [800, 440], 'hero-cottage.svg': [640, 440] }[src] || [800, 450];
+  return `<figure class="diagram ${cls}"><a href="/assets/img/${src}" target="_blank" rel="noopener" title="Open full size"><img src="/assets/img/${src}" alt="${esc(alt)}" loading="lazy" decoding="async" width="${w}" height="${h}"></a>${caption ? `<figcaption>${caption} <span class="zoom-hint">Tap to enlarge.</span></figcaption>` : ''}</figure>`;
+}
+
+const JOURNEY = [
+  ['visit', 'Free site visit', 'We find your tank and where it drains, look at the ground and access, and answer your questions. No obligation.'],
+  ['quote', 'Fixed written quote', 'Everything in writing: the plant, where it goes, the electrics, putting the garden back, building control. No surprises.'],
+  ['approval', 'Building control', 'We prepare the drawings and handle the building regulations application for you.'],
+  ['dig', 'Installation', 'The old tank is emptied and removed or filled, and the new system goes in. A typical house takes about 3 to 5 days on site.'],
+  ['power', 'Power and testing', 'A registered electrician connects the plant. We start it up and check it is working properly.'],
+  ['handover', 'Handover pack', 'We tidy up and give you a pack: what was fitted, where it is and how to look after it. Keep it for when you sell.'],
+];
+function journeyHtml(heading = 'What happens, step by step') {
+  return `<section class="journey"><h2>${heading}</h2><ol class="journey-list">${JOURNEY.map(([icon, t, d], i) => `<li><span class="journey-icon">${ICONS[icon]}</span><span class="journey-num">Step ${i + 1}</span><strong>${t}</strong><span>${d}</span></li>`).join('')}</ol></section>`;
+}
+
+function prosConsHtml() {
+  const row = (items, kind) => items.map(t => `<li class="${kind}">${ICONS[kind === 'pro' ? 'tick' : 'cross']}<span>${t}</span></li>`).join('');
+  return `<div class="pros-cons">
+<div class="pc-card"><h3>Septic tank</h3><p class="pc-sub">Separates the solids. The soil does the cleaning.</p>
+<ul>${row(['No electricity needed', 'No moving parts to break', 'Cheaper to buy', 'Fine if your ground drains well'], 'pro')}${row(['Must <strong>not</strong> go to a stream, river or ditch', 'Needs a drainage field and enough garden', 'Struggles on heavy clay or wet ground', 'Many old ones are cracked or too small'], 'con')}</ul></div>
+<div class="pc-card pc-best"><h3>Sewage treatment plant</h3><p class="pc-sub">Cleans the water itself, with air and natural bacteria.</p>
+<ul>${row(['Much cleaner water out', 'Can go to a stream that flows all year', 'Works where the ground drains badly', 'Often needs less garden than a large drainage field'], 'pro')}${row(['Most need electricity for an air pump', 'Needs a yearly service', 'Costs more to buy'], 'con')}</ul></div>
+</div>`;
+}
+
+function checkerHtml() {
+  const q = (name, legend, opts) => `<fieldset class="ck-q" data-q="${name}"><legend>${legend}</legend>${opts.map(([v, l]) => `<label><input type="radio" name="ck-${name}" value="${v}"><span>${l}</span></label>`).join('')}</fieldset>`;
+  return `<section class="checker" id="checker" aria-labelledby="ck-h">
+<div class="ck-head"><span class="ck-badge">1-minute check</span><h2 id="ck-h">Is your septic tank compliant?</h2><p>Answer four quick questions for a plain-English answer. Nothing is sent anywhere.</p></div>
+<form class="ck-form" novalidate>
+${q('type', '1. What do you have?', [['septic', 'Septic tank'], ['plant', 'Treatment plant'], ['cesspit', 'Cesspit (no outlet, emptied often)'], ['unsure', 'Not sure']])}
+${q('to', '2. Where does the liquid go?', [['stream', 'A stream or river'], ['ditch', 'A ditch (may dry up in summer)'], ['ground', 'Into the ground (soakaway or drainage field)'], ['unsure', 'Not sure']])}
+${q('issue', '3. Any problems?', [['yes', 'Yes: smells, slow drains, wet ground or backing up'], ['no', 'No, it seems fine']])}
+${q('sale', '4. Are you buying or selling soon?', [['yes', 'Yes'], ['no', 'No']])}
+<p class="ck-error" hidden>Please answer all four questions.</p>
+<p><button type="submit" class="btn btn-gold">Show my result</button></p>
+</form>
+<div class="ck-result" aria-live="polite" hidden></div>
+<noscript><p>This check needs JavaScript. <a href="/contact/">Ask us instead</a>, we're happy to help.</p></noscript>
+</section>`;
+}
+
+module.exports = { ICONS, figure, journeyHtml, prosConsHtml, checkerHtml, page, esc, gbp, abs, isTodo, faqHtml, faqSchema, ctaBand, relatedHtml, phoneHref, phoneLabel, cfg };

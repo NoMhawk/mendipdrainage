@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="tp-t tp-d" font-family="Segoe UI, Roboto, Arial, sans-serif">
+<title id="tp-t">How a sewage treatment plant works</title>
+<desc id="tp-d">Cutaway of a sewage treatment plant with three stages. First, solids settle out. Second, an air pump blows air through the liquid so bacteria break down the waste. Third, the water settles again and clean treated water flows out to a stream or drainage field.</desc>
+<defs>
+<pattern id="tp-soil" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#C9A57A"/><circle cx="3" cy="4" r="1.2" fill="#a8835a"/><circle cx="10" cy="10" r="1" fill="#a8835a"/></pattern>
+<marker id="tp-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1D2327"/></marker>
+</defs>
+<rect width="800" height="140" fill="#DCEFF2"/>
+<rect y="140" width="800" height="340" fill="url(#tp-soil)"/>
+<rect y="132" width="800" height="12" fill="#6E9B4F"/>
+<!-- inlet -->
+<path d="M20 186H172" stroke="#5a5f63" stroke-width="12"/>
+<text x="22" y="172" font-size="14" font-weight="700" fill="#1D2327">From the house</text>
+<!-- tank -->
+<rect x="170" y="160" width="440" height="240" rx="24" fill="#c7d6d9" stroke="#1D2327" stroke-width="4"/>
+<!-- chamber 1 -->
+<rect x="174" y="200" width="128" height="196" fill="#9fb8bd"/>
+<rect x="174" y="346" width="128" height="50" fill="#7b5a3a"/>
+<!-- chamber 2 -->
+<rect x="312" y="200" width="160" height="196" fill="#a9c9cf"/>
+<!-- chamber 3 -->
+<rect x="482" y="200" width="124" height="196" fill="#cfe8ee"/>
+<rect x="302" y="164" width="10" height="190" fill="#1D2327"/>
+<rect x="472" y="164" width="10" height="190" fill="#1D2327"/>
+<!-- diffuser and bubbles -->
+<rect x="330" y="372" width="124" height="8" rx="4" fill="#1D2327"/>
+<g fill="#ffffff" stroke="#2E7C88" stroke-width="2">
+<circle cx="345" cy="350" r="6"/><circle cx="372" cy="330" r="5"/><circle cx="400" cy="352" r="7"/><circle cx="428" cy="326" r="5"/><circle cx="440" cy="356" r="6"/>
+<circle cx="352" cy="296" r="5"/><circle cx="385" cy="276" r="6"/><circle cx="415" cy="298" r="5"/><circle cx="445" cy="270" r="6"/><circle cx="360" cy="240" r="5"/><circle cx="398" cy="226" r="6"/><circle cx="432" cy="236" r="5"/>
+</g>
+<!-- blower kiosk -->
+<rect x="640" y="84" width="70" height="50" rx="6" fill="#1E4D45" stroke="#1D2327" stroke-width="3"/>
+<text x="675" y="114" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">AIR</text>
+<path d="M675 134V152H392V372" fill="none" stroke="#2E7C88" stroke-width="5" stroke-dasharray="10 5"/>
+<!-- lid -->
+<rect x="210" y="126" width="70" height="10" rx="3" fill="#1D2327"/><rect x="500" y="126" width="70" height="10" rx="3" fill="#1D2327"/>
+<!-- flow arrows -->
+<path d="M240 260C270 230 300 230 330 220" fill="none" stroke="#1D2327" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#tp-arrow)"/>
+<path d="M455 220C470 228 490 236 505 236" fill="none" stroke="#1D2327" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#tp-arrow)"/>
+<!-- outlet to stream -->
+<path d="M606 230H700V300" fill="none" stroke="#5a5f63" stroke-width="12"/>
+<path d="M650 300Q700 285 760 300Q790 308 800 304V340H650Z" fill="#2E7C88"/>
+<path d="M664 318Q690 310 716 318M724 326Q748 318 772 326" stroke="#DCEFF2" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- labels -->
+<g font-size="15" fill="#1D2327">
+<circle cx="238" cy="300" r="15" fill="#C4943B"/><text x="238" y="306" text-anchor="middle" font-weight="700">1</text>
+<circle cx="440" cy="186" r="15" fill="#C4943B"/><text x="440" y="192" text-anchor="middle" font-weight="700">2</text>
+<circle cx="544" cy="300" r="15" fill="#C4943B"/><text x="544" y="306" text-anchor="middle" font-weight="700">3</text>
+<circle cx="740" cy="250" r="15" fill="#C4943B"/><text x="740" y="256" text-anchor="middle" font-weight="700">4</text>
+<text x="40" y="420" font-weight="700">1 Settle</text><text x="40" y="438">Solids sink, like a</text><text x="40" y="456">septic tank</text>
+<text x="230" y="420" font-weight="700">2 Air and bacteria</text><text x="230" y="438">An air pump feeds bacteria</text><text x="230" y="456">that eat the waste</text>
+<text x="450" y="420" font-weight="700">3 Settle again</text><text x="450" y="438">Leftover bits drop out</text><text x="450" y="456">and return to stage 1</text>
+<text x="640" y="380" font-weight="700">4 Clean water out</text><text x="640" y="398">to a stream that flows</text><text x="640" y="416">all year, or a drainage</text><text x="640" y="434">field</text>
+</g>
+<text x="400" y="40" text-anchor="middle" font-size="22" font-weight="800" fill="#1E4D45">How a sewage treatment plant works</text>
+<text x="400" y="66" text-anchor="middle" font-size="15" fill="#1D2327">A small electric air pump lets natural bacteria clean the water much more thoroughly.</text>
+</svg>

@@ -13,7 +13,7 @@ Read CLAUDE.md and every file it points to, especially `brand/brand-context.md`,
 ## The job
 1. Pick ONE main keyword. Check `seo/keyword-map.md`: if another page already owns that keyword, stop and tell me which page, and suggest improving that page instead.
 2. Add the page as a new object in `src/data/services.js` (service) or `src/data/guides.js` (guide), copying the shape of the existing entries: slug, keyword, title, description, h1, lead, sections, faqs, related.
-3. Answer the searcher's question in the lead. Use supporting keywords in the H2s. Link to at least 3 related pages.
+3. Answer the searcher's question in the lead. Where a diagram helps, add one with `fig` (existing SVGs in `static/assets/img/`) or a reusable block with `add: 'journey' | 'proscons' | 'checker'`. Use supporting keywords in the H2s. Link to at least 3 related pages.
 4. Add the page to `seo/keyword-map.md`.
 5. Run `node build.js` then `node scripts/check.js`.
 
