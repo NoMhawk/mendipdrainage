@@ -1,0 +1,50 @@
+# Soakaway project: onboarding guide
+
+This folder is the workspace for a local business website. The business replaces old septic tanks with modern sewage treatment plants, for homes within about an hour of Yeovil, Somerset. The site is built to win local search traffic, with many SEO subpages.
+
+## Read first
+Before any job, read `brand/brand-context.md`. It covers what the business is, who it's for, the brand, the content rules and the privacy rules. If something is marked **NOT DECIDED** or **Rich to update**, ask Rich. Never guess.
+
+Other key files:
+- `research/regulations.md`: the rules (GOV.UK general binding rules and Approved Document H). **Every legal or technical claim on the site must match this file.**
+- `research/competitors.md`, `research/suppliers-and-costs.md`, `research/service-area.md`: market research.
+- `brand/branding.md`: name, colours, logo, voice.
+- `seo/keyword-map.md`: which page targets which keyword. One main keyword per page.
+- `seo/seo-checklist.md`: the rules every page must pass.
+- `launch-checklist.md`: everything Rich must do or decide before going live.
+
+## Always
+- Never invent facts, numbers, prices, reviews, testimonials, accreditations, years in business, job counts or case studies.
+- Rules are England only. Say so where it matters.
+- Never promise a free upgrade or guaranteed compliance.
+- Prices come only from `src/config.js` and are always shown as ranges or "from" prices.
+- Mark gaps as "Rich to update:", never "Owner to add".
+- Never put personal data (customer names, addresses, house numbers) on the site.
+
+## Working style
+- Plain English, short sentences, UK spelling.
+- Ask before big decisions: the brand name, prices, guarantees, anything that commits the business.
+- Keep it low cost and simple. Static HTML, no frameworks, no third-party scripts.
+
+## Website
+- Source: `src/` (data and templates) and `static/` (CSS, logo, images, Cloudflare `_headers`).
+- Build: `node build.js` writes the whole site to `site/`. No npm packages needed (Node 18+).
+- Check: `node scripts/check.js`. Must show **0 errors** before any commit. It checks titles, descriptions, one H1, canonicals, sitemap, JSON-LD, broken internal links, visible TODOs and near-duplicate town pages.
+- Preview: `python -m http.server 8080 --directory site` (or the `site` entry in `.claude/launch.json`).
+- `site/` is committed so the host can serve it with no build step. Always rebuild before committing.
+- Hosting plan: Cloudflare Pages, connected to GitHub repo NoMhawk/soakaway, output folder `site`, no build command (or `node build.js` as build command). Cloudflare Web Analytics on.
+
+### Adding or changing pages
+- Service pages: `src/data/services.js`. Guides: `src/data/guides.js`. Towns: `src/data/areas.js`. Core pages (home, prices, about, contact, FAQ, hubs): `build.js`.
+- New pages are added to the sitemap automatically and get a canonical, breadcrumbs and schema.
+- Before adding a page, check `seo/keyword-map.md` so it doesn't target a keyword another page already owns. Add the new page to the map.
+- Each town page needs its own `local` paragraph and real villages. Never copy one town's text to another.
+- After a page goes live, request indexing in Google Search Console.
+
+## Agents
+Agents live in `.claude/agents/`:
+- `seo-page-writer`: writes a new service page or guide from the research files.
+- `town-page-writer`: adds or improves a town page with real local detail.
+- `fact-checker`: checks site content against `research/regulations.md` and the config. Read-only report.
+- `seo-auditor`: builds, runs the checks, reviews keyword coverage and cannibalisation. Report only.
+- `competitor-researcher`: refreshes `research/competitors.md` from the web.
