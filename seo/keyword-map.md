@@ -17,7 +17,6 @@ Rule: **one main keyword per page.** Never build two pages that target the same 
 | `/selling-a-house-with-a-septic-tank/` | selling a house with a septic tank | septic tank house sale, septic tank conveyancing, septic tank compliance certificate, septic tank buyer | commercial / research |
 | `/septic-tank-survey/` | septic tank survey | septic tank inspection, home buyer septic survey, drainage survey for house sale, septic tank compliance check | commercial |
 | `/drainage-field-installation/` | drainage field installation | soakaway for septic tank, septic tank soakaway replacement, leach field, percolation test | commercial |
-| `/treatment-plant-servicing/` | sewage treatment plant service | treatment plant maintenance, septic tank service plan, Klargester service | commercial / recurring |
 | `/cesspit-replacement/` | cesspit replacement | replace cesspool with treatment plant, cesspit to treatment plant | commercial |
 | `/new-build-off-mains-drainage/` | off mains drainage for new builds | self build sewage treatment plant, barn conversion drainage, planning drainage strategy | commercial |
 | `/phosphate-credits-somerset/` | phosphate credits Somerset | nutrient neutrality septic tank, free septic tank upgrade Somerset, Somerset Levels phosphates | research / commercial |

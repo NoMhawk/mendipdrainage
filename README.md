@@ -10,7 +10,7 @@ node scripts/check.js  # SEO and quality checks (must show 0 errors)
 python -m http.server 8080 --directory site   # preview at http://localhost:8080
 ```
 
-- 70 pages: home, 10 service pages, a visual "How it works" explainer, a septic tank compliance checker, a price guide, 12 guides, 35 town pages, 3 county hubs, areas, FAQ, about, contact, privacy.
+- 63 pages: home, 9 service pages, a visual "How it works" explainer, a septic tank compliance checker, a price guide, 12 guides, 30 town pages, 2 county hubs, areas, FAQ, about, contact, privacy. No servicing: the business installs and replaces only.
 - Diagrams and illustrations are hand-made SVGs in `static/assets/img/`. The checker is `static/assets/site.js` (runs in the browser, sends nothing).
 - Every page gets a canonical, Open Graph tags, breadcrumbs, LocalBusiness schema, and FAQ/Service/Article schema where it fits.
 - `sitemap.xml` and `robots.txt` are generated.

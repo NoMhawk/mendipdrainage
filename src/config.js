@@ -28,7 +28,6 @@ module.exports = {
     drainageFieldLow: 2500,
     drainageFieldHigh: 6000,
     surveyFrom: 295,
-    serviceFrom: 150,
     desludgeLow: 200,
     desludgeHigh: 350,
   },

@@ -10,7 +10,7 @@
     survey: '<a href="/septic-tank-survey/">septic tank survey</a>',
     field: '<a href="/drainage-field-installation/">drainage fields</a>',
     cesspit: '<a href="/cesspit-replacement/">cesspit replacement</a>',
-    service: '<a href="/treatment-plant-servicing/">servicing</a>',
+    service: '<a href="/guides/how-often-empty-treatment-plant/">emptying and upkeep</a>',
     sale: '<a href="/selling-a-house-with-a-septic-tank/">selling a house with a septic tank</a>',
     how: '<a href="/how-it-works/">how septic tanks and treatment plants work</a>'
   };

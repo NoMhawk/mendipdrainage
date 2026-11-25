@@ -132,7 +132,7 @@ module.exports = [
       { h2: 'Running costs to budget for', html: `
 <ul>
 <li>Emptying: about ${gbp(p.desludgeLow)}–${gbp(p.desludgeHigh)} a time, usually yearly</li>
-<li>Treatment plant service: from ${gbp(p.serviceFrom)} a year</li>
+<li>A yearly treatment plant service by a competent engineer</li>
 <li>Electricity for a treatment plant</li>
 </ul>` },
     ],
@@ -238,10 +238,10 @@ module.exports = [
 <li>For a treatment plant, check whether the maker says to empty fully or partly, and whether to refill it with water afterwards.</li>
 <li>Keep the receipt. Emptying records help when you sell.</li>
 </ul>` },
-      { h2: 'Cost', html: `<p>Typically ${gbp(p.desludgeLow)} to ${gbp(p.desludgeHigh)} per empty, depending on size and access. A yearly service for a treatment plant is from ${gbp(p.serviceFrom)}. See <a href="/treatment-plant-servicing/">servicing</a>.</p>` },
+      { h2: 'Cost', html: `<p>Typically ${gbp(p.desludgeLow)} to ${gbp(p.desludgeHigh)} per empty, depending on size and access. A treatment plant also needs a yearly service by a competent engineer, for example a British Water accredited service engineer. We install, we do not service, but the plant maker can recommend someone local.</p>` },
     ],
     faqs: [],
-    related: ['treatment-plant-servicing'],
+    related: ['sewage-treatment-plant-installation'],
   },
 
   {
@@ -343,6 +343,6 @@ module.exports = [
       { h2: 'What to do', html: `<p>Start with emptying and checking the lids and vents. If a treatment plant smells, check the blower is running and the alarm is not on. If the smell keeps coming back, book a <a href="/septic-tank-survey/">survey</a>. The rules say you must fix a system that causes smells.</p>` },
     ],
     faqs: [],
-    related: ['guides/signs-your-septic-tank-is-failing', 'treatment-plant-servicing'],
+    related: ['guides/signs-your-septic-tank-is-failing', 'septic-tank-survey'],
   },
 ];

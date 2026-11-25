@@ -54,7 +54,7 @@ fs.cpSync(path.join(__dirname, 'static'), OUT, { recursive: true });
 {
   const featured = [
     ['septic-tank-replacement', 'house'], ['sewage-treatment-plant-installation', 'drop'], ['selling-a-house-with-a-septic-tank', 'handover'],
-    ['septic-tank-survey', 'visit'], ['drainage-field-installation', 'dig'], ['treatment-plant-servicing', 'shield'],
+    ['septic-tank-survey', 'visit'], ['drainage-field-installation', 'dig'], ['cesspit-replacement', 'shield'],
   ].map(([k, icon]) => ({ s: services.find(x => x.slug === k), icon }));
   const homeFaqs = [
     { q: 'Do I need to replace my septic tank?', a: 'If it discharges to a stream, river or ditch, yes: under the general binding rules a septic tank must not discharge to a watercourse. If it goes to a working drainage field and is in good order, it may be fine. A survey will tell you.' },
@@ -112,7 +112,6 @@ fs.cpSync(path.join(__dirname, 'static'), OUT, { recursive: true });
       <li><span>Full septic tank to treatment plant replacement</span><strong>${gbp(p.replacementTypicalLow)}–${gbp(p.replacementTypicalHigh)}</strong></li>
       <li><span>New drainage field</span><strong>${gbp(p.drainageFieldLow)}–${gbp(p.drainageFieldHigh)}</strong></li>
       <li><span>Septic tank survey</span><strong>from ${gbp(p.surveyFrom)}</strong></li>
-      <li><span>Treatment plant service</span><strong>from ${gbp(p.serviceFrom)}</strong></li>
     </ul>
     <p><a href="/septic-tank-replacement-cost/">What's included, and what changes the price</a></p>
   </div>
@@ -323,7 +322,7 @@ ${ctaBand()}`;
 <section><h2>Running costs to budget for</h2>
 <ul>
 <li>Emptying: typically ${gbp(p.desludgeLow)} to ${gbp(p.desludgeHigh)}, at least yearly or as the maker says</li>
-<li>Yearly service: from ${gbp(p.serviceFrom)}</li>
+<li>A yearly service by a competent engineer, for example a British Water accredited service engineer. We install, we do not service, but the plant maker can recommend someone local</li>
 <li>Electricity for the plant's air pump or motor</li>
 </ul></section>
 <section><h2>Where our figures come from</h2>
@@ -418,7 +417,6 @@ ${a.catchmentNote ? `<p>${esc(a.catchmentNote)}</p>` : ''}
 <li><a href="/septic-tank-survey/">Septic tank surveys</a> for buyers and sellers</li>
 <li><a href="/selling-a-house-with-a-septic-tank/">Help with house sales</a>, including the written description the rules require</li>
 <li><a href="/cesspit-replacement/">Cesspit replacement</a> and <a href="/new-build-off-mains-drainage/">new-build drainage</a></li>
-<li><a href="/treatment-plant-servicing/">Treatment plant servicing</a></li>
 </ul></section>
 <section><h2>Septic tank replacement cost in ${esc(a.name)}</h2>
 <p>For a typical house, a full replacement with a treatment plant usually costs ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}. ${a.catchment === 'slm' || a.catchment === 'check' ? 'Before paying, check whether a phosphate credit scheme could fund your upgrade. ' : ''}See <a href="/septic-tank-replacement-cost/">what changes the price</a>.</p></section>
@@ -505,7 +503,7 @@ ${countyGroups.map(g => `<section><h2><a href="/areas/${g.slug}/">${g.name}</a><
 <p><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></p>
 <p><label for="f-town">Town or village</label><input id="f-town" name="town" autocomplete="address-level2" required></p>
 <p><label for="f-need">What do you need?</label><select id="f-need" name="need">
-<option>Septic tank replacement</option><option>Treatment plant installation</option><option>Survey for a house sale</option><option>Drainage field</option><option>Cesspit replacement</option><option>New build / conversion</option><option>Servicing</option><option>Not sure</option></select></p>
+<option>Septic tank replacement</option><option>Treatment plant installation</option><option>Survey for a house sale</option><option>Drainage field</option><option>Cesspit replacement</option><option>New build / conversion</option><option>Not sure</option></select></p>
 <p><label for="f-sale">Are you buying or selling?</label><select id="f-sale" name="sale"><option>No</option><option>Selling</option><option>Buying</option></select></p>
 <p><label for="f-msg">Anything else?</label><textarea id="f-msg" name="message" rows="5" placeholder="Where does your tank discharge, if you know? Any completion date?"></textarea></p>
 <p class="small">We only use your details to reply to your enquiry. See our <a href="/privacy/">privacy notice</a>.</p>

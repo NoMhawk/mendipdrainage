@@ -44,8 +44,8 @@ Researched 24 November 2026. Facts are from each firm's own website or directory
 3. **Selling-a-house focus.** A fast "sale-ready" route for sellers, buyers, estate agents and conveyancers: survey in days, written compliance pack, fixed quote.
 4. **Honest phosphate advice.** We tell people if they may qualify for a funded upgrade elsewhere. Builds trust in an area where WCI owns the "free" message.
 5. **Clear guarantee and aftercare** in writing (Rich to decide the terms).
-6. **British Water accreditation** for servicing engineers (Rich to get).
-7. **One job, one firm.** Survey, design, building control, install, electrics, paperwork and first service, so the customer deals with one firm.
+6. **British Water accreditation** (Rich to decide: mainly a servicing qualification, and Mendip Drainage does not offer servicing).
+7. **One job, one firm.** Survey, design, building control, install, electrics and paperwork, so the customer deals with one firm.
 
 ## Rich to update
 - Check each local firm's prices by asking for quotes (mystery shop) once the business is set up.

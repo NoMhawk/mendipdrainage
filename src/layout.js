@@ -64,7 +64,6 @@ function footer(areas) {
         <li><a href="/selling-a-house-with-a-septic-tank/">Selling a house</a></li>
         <li><a href="/cesspit-replacement/">Cesspit replacement</a></li>
         <li><a href="/new-build-off-mains-drainage/">New builds</a></li>
-        <li><a href="/treatment-plant-servicing/">Servicing</a></li>
         <li><a href="/phosphate-credits-somerset/">Somerset phosphates</a></li>
       </ul>
     </div>

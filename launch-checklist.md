@@ -7,9 +7,8 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [ ] Check "Mendip Drainage" on Companies House and the IPO trade mark search before registering the company.
 - [ ] **Domain.** Buy mendipdrainage.com now (it was unregistered on 25 Nov 2026), plus mendipdrainage.co.uk if free, pointed at the .com.
 - [ ] **Prices.** Confirm or change every figure in `src/config.js` → `prices` against real supplier quotes and labour costs. Confirm they include VAT.
-- [ ] **Claims on the site to confirm are true:** "usually 3 to 5 working days on site", "Part P registered electrician" for the power supply, "we prepare and submit the building control application", "service plans available", and the opening hours.
+- [ ] **Claims on the site to confirm are true:** "usually 3 to 5 working days on site", "Part P registered electrician" for the power supply, "we prepare and submit the building control application" and the opening hours.
 - [ ] **Guarantee terms** for installs and workmanship, then add them to the site.
-- [ ] **Service plan prices** (the servicing page currently says they are being finalised).
 
 ## Business setup
 - [ ] Company registration; add name and number to `src/config.js`.
@@ -17,7 +16,7 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [ ] Business email on the new domain.
 - [ ] Public liability insurance (and employer's liability if hiring).
 - [ ] Waste carrier registration with the Environment Agency, if you will carry any waste yourself. Otherwise use a registered tanker firm.
-- [ ] British Water accredited service engineer course (big trust signal; only one competitor shows it).
+- [ ] British Water accreditation: optional. Their service engineer course is mainly for servicing, which we do not offer; check whether an installer route exists.
 - [ ] Manufacturer approved installer status (Klargester, Marsh, Tricel, Graf, WPL).
 - [ ] Trade accounts with local merchants (see `research/suppliers-and-costs.md`).
 - [ ] Call Somerset Council and Dorset Council building control: fee for a treatment plant replacement, and how they like applications submitted.

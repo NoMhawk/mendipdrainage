@@ -3,7 +3,7 @@
 Read this before any job. If something you need is marked **NOT DECIDED** or **Rich to update**, ask Rich. Never fill it in yourself.
 
 ## What the business is
-A local firm, based in Wells, Somerset, that **replaces old septic tanks with modern sewage treatment plants**. Also: drainage fields, cesspit replacement, surveys for house sales, off-mains drainage for new builds, and servicing plans.
+A local firm, based in Wells, Somerset, that **replaces old septic tanks with modern sewage treatment plants**. Also: drainage fields, cesspit replacement, surveys for house sales and off-mains drainage for new builds. **We do not offer servicing or emptying** (decided 25 Nov 2026): we install new systems and replace old ones. Point customers to the plant maker or a British Water accredited service engineer for upkeep.
 
 Why people need it: under the Environment Agency's general binding rules (England), a septic tank must not discharge to a stream, river or ditch. Those that do must be replaced or upgraded. A house sale is the usual trigger, because the buyer's survey or solicitor flags it. New builds off the mains also need a compliant system for building control. Full detail: `research/regulations.md`.
 

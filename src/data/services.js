@@ -72,7 +72,7 @@ module.exports = [
       ['Plant only', `about ${gbp(p.plantOnlyLow)} to ${gbp(p.plantOnlyHigh)} for a house-sized unit`],
       ['Installed', `typically ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}`],
       ['Standard', 'BS EN 12566-3 plants'],
-      ['Servicing', 'Plans available after install'],
+      ['Upkeep', 'Yearly service and emptying, booked by you'],
     ],
     sections: [
       { h2: 'What a treatment plant does', fig: { src: 'treatment-plant-diagram.svg', alt: 'Cutaway of a sewage treatment plant: solids settle, an air pump feeds bacteria that clean the water, it settles again and clean water flows out.', caption: 'A treatment plant cleans the water itself using air and natural bacteria.' }, html: `
@@ -104,10 +104,11 @@ module.exports = [
     faqs: [
       { q: 'How much electricity does a treatment plant use?', a: 'It depends on the make and process. Most domestic plants run an air pump or motor all the time, so ask for the running cost of each option. We include this when we compare plants for you.' },
       { q: 'What happens in a power cut?', a: 'Approved Document H says a plant that needs power should be able to work without it for up to 6 hours, or have a backup supply. Plants still hold the waste in a power cut. Tell us if your area has long outages and we will factor it in.' },
+      { q: 'Do you service treatment plants?', a: 'No. We install and replace systems. After handover, your plant needs a yearly service by a competent engineer, for example a British Water accredited service engineer. We install, we do not service, but the plant maker can recommend someone local. Your handover pack says what the maker requires.' },
       { q: 'How often does a treatment plant need emptying?', a: 'The general binding rules say at least once a year, or as the manufacturer says. See our guide on how often to empty a treatment plant.' },
       { q: 'Can I install a treatment plant myself?', a: 'It is possible but not something we would recommend. It needs building regulations approval, correct sizing, safe deep excavation, and electrical work by a registered electrician.' },
     ],
-    related: ['septic-tank-replacement', 'drainage-field-installation', 'treatment-plant-servicing', 'septic-tank-replacement-cost'],
+    related: ['septic-tank-replacement', 'drainage-field-installation', 'septic-tank-replacement-cost'],
   },
 
   {
@@ -241,7 +242,7 @@ module.exports = [
       { q: 'Does a normal house survey cover the septic tank?', a: 'Usually not in any detail. A building survey or homebuyer report will note there is private drainage, but it will not normally tell you where it discharges or whether it meets the rules.' },
       { q: 'Should the buyer or seller pay for the survey?', a: 'Either. Buyers often pay for their own, but sellers who get one done before listing can answer questions quickly and keep a sale on track.' },
     ],
-    related: ['selling-a-house-with-a-septic-tank', 'septic-tank-replacement', 'treatment-plant-servicing'],
+    related: ['selling-a-house-with-a-septic-tank', 'septic-tank-replacement'],
   },
 
   {
@@ -281,40 +282,6 @@ module.exports = [
       { q: 'Can I drive over a drainage field?', a: 'No. Approved Document H says no access roads, driveways or paved areas should be in the disposal area.' },
     ],
     related: ['septic-tank-replacement', 'sewage-treatment-plant-installation', 'septic-tank-replacement-cost'],
-  },
-
-  {
-    slug: 'treatment-plant-servicing',
-    keyword: 'sewage treatment plant service',
-    title: 'Sewage Treatment Plant Servicing | Wells & Somerset',
-    description: `Yearly sewage treatment plant servicing in Somerset and Dorset. Keep it working, meet the general binding rules and have records ready for a sale. From ${gbp(p.serviceFrom)}.`,
-    h1: 'Treatment plant servicing',
-    lead: 'A treatment plant is a small machine working every day. A yearly service keeps it running, catches faults early, and gives you the records buyers and the Environment Agency expect.',
-    glance: [
-      ['Service', `from ${gbp(p.serviceFrom)}`],
-      ['How often', 'At least yearly, or as the maker says'],
-      ['Emptying', `typically ${gbp(p.desludgeLow)} to ${gbp(p.desludgeHigh)}, by a registered waste carrier`],
-      ['Records', 'Written service report each visit'],
-    ],
-    sections: [
-      { h2: 'What the rules say', html: `
-<p>The general binding rules say you must maintain your system as the manufacturer says, have the sludge removed before it goes beyond the maximum capacity (at least once a year, or as the manufacturer says), and use a registered waste carrier to take it away. The person doing the maintenance should be competent, for example a British Water accredited service engineer.</p>
-<p>You must also repair or replace the system if it is not in good working order, for example leaks, cracks, blockages, smells or a failed motor, pump or electrics.</p>` },
-      { h2: 'What a service includes', html: `
-<ul>
-<li>Check the air pump or motor, alarms and controls</li>
-<li>Check diffusers, filters and baffles</li>
-<li>Measure the sludge level and arrange emptying if needed</li>
-<li>Look at the effluent and the outfall or drainage field</li>
-<li>Written report with any faults and recommended fixes</li>
-</ul>` },
-      { h2: 'Plans', html: `<p>Service plans with a yearly reminder are available for plants we install and most other makes. <strong>Plan details and prices are being finalised.</strong> Call us for a quote.</p>` },
-    ],
-    faqs: [
-      { q: 'Do you service plants you did not install?', a: 'Yes, most common makes. Tell us the make and model when you book.' },
-      { q: 'My plant alarm is going off. What should I do?', a: 'Do not ignore it. It usually means a pump, air blower or high level problem. Cut back water use and call us or your service company.' },
-    ],
-    related: ['sewage-treatment-plant-installation', 'septic-tank-survey'],
   },
 
   {
