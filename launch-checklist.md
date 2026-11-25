@@ -35,7 +35,9 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [ ] `node build.js` shows no placeholder warnings, and `node scripts/check.js` shows 0 errors.
 
 ## Go live
-- [x] Cloudflare Pages project "yeodrainage" connected to GitHub NoMhawk/soakaway, output folder `site` (done 25 Nov 2026). Live at https://yeodrainage.pages.dev. Every push to main redeploys. Its address still says "yeodrainage" (Cloudflare can't rename a project): create a new "mendipdrainage" project and delete the old one, or just use the custom domain once bought.
+- [x] Cloudflare Pages project "yeodrainage" connected to GitHub NoMhawk/soakaway, output folder `site` (done 25 Nov 2026). https://yeodrainage.pages.dev, redeploys on every push to main.
+- [x] Cloudflare Pages project "mendipdrainage" (direct upload, 25 Nov 2026). https://mendipdrainage.pages.dev is the address to use until the domain is bought. It does not update from GitHub: see CLAUDE.md for the refresh steps.
+- [ ] When the domain is bought: attach mendipdrainage.com to the Pages project that should serve it. Ideally move the GitHub connection to that project (delete yeodrainage, then connect the repo to a Git-connected project) so updates are automatic again.
 - [ ] Custom domain on Cloudflare, HTTPS on, redirect the non-www to the www version (or the other way round; it must match `url`).
 - [ ] Cloudflare Web Analytics on. Do this after the domain is bought. A Web Analytics entry for yeodrainage.pages.dev was started but its script is not on the site yet: add the new domain to it (or replace it), then add the beacon script to `src/layout.js`.
 - [ ] Google Search Console: verify the domain, submit `sitemap.xml`.

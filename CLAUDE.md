@@ -34,7 +34,10 @@ Other key files:
 - Check: `node scripts/check.js`. Must show **0 errors** before any commit. It checks titles, descriptions, one H1, canonicals, sitemap, JSON-LD, broken internal links, visible TODOs and near-duplicate town pages.
 - Preview: `python -m http.server 8080 --directory site` (or the `site` entry in `.claude/launch.json`).
 - `site/` is committed so the host can serve it with no build step. Always rebuild before committing.
-- Hosting plan: Cloudflare Pages, connected to GitHub repo NoMhawk/soakaway, output folder `site`, no build command (or `node build.js` as build command). Cloudflare Web Analytics on.
+- Hosting: Cloudflare Pages, two projects until the domain is bought:
+  - **mendipdrainage** (https://mendipdrainage.pages.dev): the address to use and share. Direct upload, so it does NOT update from GitHub. After every change: `node build.js`, `python scripts/make-upload-zip.py`, then in Cloudflare open Workers & Pages > mendipdrainage > Create deployment > Production, upload `mendip-site.zip`, Save and deploy.
+  - **yeodrainage** (https://yeodrainage.pages.dev): connected to GitHub NoMhawk/soakaway (output folder `site`, no build command), redeploys on every push to main. Cloudflare only lets one Pages project use the repo.
+  - Once mendipdrainage.com is bought, attach it as a custom domain and turn on Web Analytics.
 
 ### Adding or changing pages
 - Service pages: `src/data/services.js`. Guides: `src/data/guides.js`. Towns: `src/data/areas.js`. Core pages (home, prices, about, contact, FAQ, hubs): `build.js`.
