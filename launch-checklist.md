@@ -5,7 +5,8 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 ## Decisions (Rich to update)
 - [x] **Brand name.** Mendip Drainage (chosen 25 Nov 2026, base moved from Yeovil to Wells; replaced Yeo Drainage).
 - [ ] Check "Mendip Drainage" on Companies House and the IPO trade mark search before registering the company.
-- [ ] **Domain.** Buy mendipdrainage.com now (it was unregistered on 25 Nov 2026), plus mendipdrainage.co.uk if free, pointed at the .com.
+- [x] **Domain.** mendipdrainage.com bought on Cloudflare (25 Nov 2026).
+- [ ] Optional: buy mendipdrainage.co.uk if free and redirect it to the .com.
 - [ ] **Prices.** Confirm or change every figure in `src/config.js` → `prices` against real supplier quotes and labour costs. Confirm they include VAT.
 - [ ] **Claims on the site to confirm are true:** "usually 3 to 5 working days on site", "Part P registered electrician" for the power supply, "we prepare and submit the building control application" and the opening hours.
 - [ ] **Guarantee terms** for installs and workmanship, then add them to the site.
@@ -13,7 +14,8 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 ## Business setup
 - [ ] Company registration; add name and number to `src/config.js`.
 - [ ] Business phone number (a local 01935 number builds trust); add to `src/config.js`.
-- [ ] Business email on the new domain.
+- [x] Business email on the new domain: hello@mendipdrainage.com (and any other address) forwards to Gmail via Cloudflare Email Routing. Receive only.
+- [ ] Optional: to reply as hello@, set up Gmail "Send mail as" with an SMTP service, then add it to the SPF record.
 - [ ] Public liability insurance (and employer's liability if hiring).
 - [ ] Waste carrier registration with the Environment Agency, if you will carry any waste yourself. Otherwise use a registered tanker firm.
 - [ ] British Water accreditation: optional. Their service engineer course is mainly for servicing, which we do not offer; check whether an installer route exists.
@@ -36,10 +38,11 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 ## Go live
 - [x] Cloudflare Pages project "yeodrainage" connected to GitHub NoMhawk/soakaway, output folder `site` (done 25 Nov 2026). https://yeodrainage.pages.dev, redeploys on every push to main.
 - [x] Cloudflare Pages project "mendipdrainage" (direct upload, 25 Nov 2026). https://mendipdrainage.pages.dev is the address to use until the domain is bought. It does not update from GitHub: see CLAUDE.md for the refresh steps.
-- [ ] When the domain is bought: attach mendipdrainage.com to the Pages project that should serve it. Ideally move the GitHub connection to that project (delete yeodrainage, then connect the repo to a Git-connected project) so updates are automatic again.
-- [ ] Custom domain on Cloudflare, HTTPS on, redirect the non-www to the www version (or the other way round; it must match `url`).
-- [ ] Cloudflare Web Analytics on. Do this after the domain is bought. A Web Analytics entry for yeodrainage.pages.dev was started but its script is not on the site yet: add the new domain to it (or replace it), then add the beacon script to `src/layout.js`.
-- [ ] Google Search Console: verify the domain, submit `sitemap.xml`.
+- [x] mendipdrainage.com and www attached to the mendipdrainage Pages project (25 Nov 2026).
+- [ ] Optional: make updates automatic. Delete yeodrainage, create a new Git-connected project, attach the domain to it, then delete the direct-upload project.
+- [x] HTTPS forced, mendipdrainage.com redirects to https://www.mendipdrainage.com (matches `url`).
+- [x] Cloudflare Web Analytics on for mendipdrainage.com (automatic setup, no script in the code). The unused yeodrainage.pages.dev entry can be deleted.
+- [x] Google Search Console: domain verified by DNS, sitemap submitted (25 Nov 2026). Check back in a few days that it shows Success, then request indexing for the home page.
 - [ ] Bing Webmaster Tools: import from Search Console.
 
 ## Local SEO (the biggest win for a local trade)

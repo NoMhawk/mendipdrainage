@@ -12,7 +12,7 @@ module.exports = {
   region: 'Somerset',
 
   phone: 'TODO 01749 000000',          // TODO: real number. Shown as "Call us" until set.
-  email: 'TODO hello@mendipdrainage.com',
+  email: 'hello@mendipdrainage.com',   // Cloudflare Email Routing forwards this (and every other address on the domain) to Rich's Gmail.
   formAction: 'TODO',                  // TODO: form endpoint (e.g. Formspree or a Cloudflare Pages Function). Until set, the form shows phone/email instead.
   companyName: 'TODO Mendip Drainage Ltd', // TODO: registered company name and number for the footer
   companyNumber: 'TODO',
