@@ -1,6 +1,6 @@
 # Soakaway project: onboarding guide
 
-This folder is the workspace for a local business website. The business replaces old septic tanks with modern sewage treatment plants, for homes within about an hour of Yeovil, Somerset. The site is built to win local search traffic, with many SEO subpages.
+This folder is the workspace for a local business website. The business replaces old septic tanks with modern sewage treatment plants, for homes within about an hour of Wells, Somerset. Brand: Mendip Drainage (mendipdrainage.com). The site is built to win local search traffic, with many SEO subpages.
 
 ## Read first
 Before any job, read `brand/brand-context.md`. It covers what the business is, who it's for, the brand, the content rules and the privacy rules. If something is marked **NOT DECIDED** or **Rich to update**, ask Rich. Never guess.

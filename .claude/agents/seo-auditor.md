@@ -16,7 +16,7 @@ Read CLAUDE.md, `seo/keyword-map.md` and `seo/seo-checklist.md`.
 3. Coverage: list keywords in `seo/keyword-map.md` that have no page yet, and pages that are not in the map.
 4. Internal links: find pages with fewer than 3 internal links in their main content, and any page more than 3 clicks from home.
 5. Town pages: report the similarity figure, and any town whose `local` text is generic.
-6. Go through the non-automated items in `seo/seo-checklist.md` for the 10 most important pages (home, the service pages, prices, Yeovil).
+6. Go through the non-automated items in `seo/seo-checklist.md` for the 10 most important pages (home, the service pages, prices, Wells).
 7. Local SEO: list which launch-checklist local SEO tasks are still unticked.
 
 ## Rules

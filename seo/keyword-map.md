@@ -10,7 +10,7 @@ Rule: **one main keyword per page.** Never build two pages that target the same 
 
 | URL | Main keyword | Supporting keywords | Intent |
 |---|---|---|---|
-| `/` | septic tank replacement Yeovil | septic tank replacement Somerset, treatment plant installer Somerset, off mains drainage Yeovil | local commercial |
+| `/` | septic tank replacement Wells | septic tank replacement Somerset, septic tank replacement Mendip, treatment plant installer Somerset, off mains drainage Wells | local commercial |
 | `/septic-tank-replacement/` | septic tank replacement | replace septic tank, septic tank upgrade, new septic tank, old septic tank replacement | commercial |
 | `/sewage-treatment-plant-installation/` | sewage treatment plant installation | treatment plant installer, package treatment plant, domestic sewage treatment plant, Klargester installer | commercial |
 | `/septic-tank-to-treatment-plant/` | septic tank to treatment plant conversion | convert septic tank to treatment plant, septic tank conversion unit, retrofit septic tank | commercial / research |
@@ -56,9 +56,9 @@ Rule: **one main keyword per page.** Never build two pages that target the same 
 
 Main keyword pattern: **septic tank replacement [town]**. Supporting: "treatment plant installation [town]", "septic tank [town]", "off mains drainage [town]".
 
-One page per town in `research/service-area.md` (35 towns), plus county hubs:
-- `/areas/` (hub, "septic tank replacement Somerset and Dorset")
-- `/areas/somerset/`, `/areas/dorset/`, `/areas/devon-and-wiltshire/`
+One page per town in `research/service-area.md` (30 towns, within an hour of Wells), plus county hubs:
+- `/areas/` (hub, "septic tank replacement Somerset")
+- `/areas/somerset/`, `/areas/dorset-and-wiltshire/`
 
 **Doorway page rule:** every town page must have real local content (council, river and catchment, phosphate status, typical properties, distance from base, nearby towns). The town data file has a unique paragraph for each. Never publish a town page that is the same template with only the name swapped.
 
@@ -76,7 +76,7 @@ One page per town in `research/service-area.md` (35 towns), plus county hubs:
 - septic tank mortgage problems
 
 ## Competitor keyword gaps to target first
-1. Yeovil and every South Somerset town (nobody has real pages).
+1. Wells and every Mendip and central Somerset town (Rich to update: re-check competitors now the base is Wells).
 2. "selling a house with a septic tank" + town names (high intent, time-pressured buyers).
 3. "septic tank replacement cost" (nobody publishes prices).
 4. "phosphate credits Somerset" for homeowners (only WCI and the council rank).

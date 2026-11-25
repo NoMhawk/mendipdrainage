@@ -24,7 +24,7 @@ const NAV = [
   ['/guides/', 'Guides'],
 ];
 
-const LOGO = `<svg class="logo-mark" viewBox="0 0 52 52" aria-hidden="true" focusable="false"><rect x="2" y="2" width="48" height="48" rx="11" fill="#F6F1E6"/><path d="M13 11c0 9 4 14 13 19M39 11c0 9-4 14-13 19M26 30v13" stroke="#1E4D45" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="26" cy="29" r="4.5" fill="#C4943B"/></svg>`;
+const LOGO = `<svg class="logo-mark" viewBox="0 0 52 52" aria-hidden="true" focusable="false"><rect x="2" y="2" width="48" height="48" rx="11" fill="#F6F1E6"/><path d="M26 6.5c-2.6 3.4-5 6.6-5 9.3a5 5 0 0 0 10 0c0-2.7-2.4-5.9-5-9.3z" fill="#C4943B"/><path d="M8.5 32.5Q17.5 18.5 26.5 28Q34.5 20 43.5 32.5" stroke="#1E4D45" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 41q4-3.2 8 0t8 0t8 0t8 0" stroke="#1E4D45" stroke-width="4" fill="none" stroke-linecap="round"/></svg>`;
 
 function header(path) {
   const links = NAV.map(([href, label]) => {
@@ -48,7 +48,7 @@ function footer(areas) {
   <div class="wrap footer-grid">
     <div>
       <p class="footer-brand">${esc(cfg.brand)}</p>
-      <p>${esc(cfg.tagline)} Septic tank replacement and sewage treatment plants across Yeovil, Somerset and Dorset.</p>
+      <p>${esc(cfg.tagline)} Septic tank replacement and sewage treatment plants across Wells, the Mendips and Somerset.</p>
       <p><a class="btn btn-gold" href="${phoneHref()}">${phoneLabel()}</a></p>
       ${isTodo(cfg.email) ? '' : `<p><a href="mailto:${esc(cfg.email)}">${esc(cfg.email)}</a></p>`}
       <p>${esc(cfg.hours)}</p>
@@ -120,7 +120,7 @@ function businessSchema(areas) {
     url: abs('/'),
     logo: abs('/assets/logo.svg'),
     image: abs('/assets/og-image.png'),
-    description: 'Septic tank replacement, sewage treatment plant installation, drainage fields and surveys across Yeovil, Somerset, Dorset and nearby.',
+    description: 'Septic tank replacement, sewage treatment plant installation, drainage fields and surveys across Wells, the Mendips, Somerset and nearby.',
     address: { '@type': 'PostalAddress', addressLocality: cfg.baseTown, addressRegion: cfg.region, addressCountry: 'GB' },
     areaServed: areas.map(a => ({ '@type': 'City', name: a.name })),
     priceRange: `${gbp(cfg.prices.surveyFrom)}–${gbp(cfg.prices.replacementTypicalHigh)}`,
@@ -144,7 +144,7 @@ function faqHtml(faqs, heading = 'Common questions') {
 }
 
 function ctaBand(text = 'Get a fixed, written quote') {
-  return `<section class="cta-band"><div class="wrap"><h2>${text}</h2><p>Free site visit across Yeovil and an hour around. We tell you straight what you need, what it costs and how long it takes.</p><p><a class="btn btn-gold" href="/contact/">Book a free site visit</a> <a class="btn btn-ghost" href="${phoneHref()}">${phoneLabel()}</a></p></div></section>`;
+  return `<section class="cta-band"><div class="wrap"><h2>${text}</h2><p>Free site visit across Wells and an hour around. We tell you straight what you need, what it costs and how long it takes.</p><p><a class="btn btn-gold" href="/contact/">Book a free site visit</a> <a class="btn btn-ghost" href="${phoneHref()}">${phoneLabel()}</a></p></div></section>`;
 }
 
 function relatedHtml(links, heading = 'Related') {

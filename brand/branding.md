@@ -1,6 +1,6 @@
 # Branding
 
-Status: **name decided** (Yeo Drainage, chosen by Rich on 24 November 2026). Colours, logo and illustration style below are the working design. Everything brand-related is set in `src/config.js` and `static/assets/`.
+Status: **name decided** (Mendip Drainage, chosen by Rich on 25 November 2026, when the base moved from Yeovil to Wells. It replaced the earlier name Yeo Drainage). Colours, logo and illustration style below are the working design. Everything brand-related is set in `src/config.js` and `static/assets/`.
 
 ## Who we are talking to
 **Main audience:** a homeowner aged 30+, usually with no practical or trade experience. They have just found out (often from a buyer's survey, a solicitor or a smell in the garden) that their septic tank is a problem. They:
@@ -15,16 +15,16 @@ Also: sellers and buyers under time pressure, self-builders, estate agents and c
 
 So the site leads with **simple diagrams, a 1-minute checker, clear prices and a step-by-step of what happens**, and puts a contact button at every step.
 
-## Name: **Yeo Drainage**
-Named after the River Yeo, which runs through Yeovil (the town is named after it). Short, local, easy to say on the phone. The business is about getting clean water back into rivers like the Yeo.
+## Name: **Mendip Drainage**
+Named after the Mendip Hills. Wells sits right under them, and the springs that gave the city its name come out of the Mendip limestone. Locals know and trust the name, and it covers the whole patch rather than one town. Easy to say on the phone. The business is about getting clean water back into the rivers that flow from the hills.
 
-- Domain: **yeodrainage.com** (no hyphens). Unregistered when checked on 24 Nov 2026 via the Verisign .com registry. **Rich to update:** buy it, and yeodrainage.co.uk if free.
-- **Rich to update:** check "Yeo Drainage" on Companies House and the IPO trade mark search before registering the company.
-- Small risk: "Yeo" may remind people of Yeo Valley (dairy brand). Different trade, so low risk, but never use green-and-white dairy styling or the words "Yeo Valley".
+- Domain: **mendipdrainage.com** (no hyphens). Unregistered when checked on 25 Nov 2026 via the Verisign .com registry. **Rich to update:** buy it, and mendipdrainage.co.uk if free.
+- **Rich to update:** check "Mendip Drainage" on Companies House and the IPO trade mark search before registering the company. A web search on 25 Nov 2026 found no Somerset firm trading under that name.
+- "Mendip" was also the name of the old district council (merged into Somerset Council in 2023). Never imply any link to the council.
 
 ## Tagline
 **"Septic tank replacement, done properly."**
-Supporting line: "From survey to sign-off, one local team. Yeovil and an hour around."
+Supporting line: "From survey to sign-off, one local team. Wells and an hour around."
 
 ## Voice
 - Plain English. Short sentences. Explain every technical word the first time (e.g. "effluent, the liquid that leaves the tank").
@@ -49,13 +49,13 @@ Words we avoid: cheap, best in the UK, guaranteed compliance, any invented numbe
 | Earth | `#8A6A45` | Soil in diagrams |
 | Warning red | `#B5432F` | "Not allowed" marks in diagrams only |
 
-Stone gold nods to the golden Ham stone of Yeovil's buildings. Contrast: white on river green and ink on limestone pass WCAG AA.
+Stone gold nods to the warm Doulting stone that Wells Cathedral is built from. Contrast: white on river green and ink on limestone pass WCAG AA.
 
 ## Typography
 System font stack (fast, private): `-apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`. No web fonts.
 
 ## Logo
-`static/assets/logo.svg` and `favicon.svg`: a river-green rounded square with a **"Y" made of two streams joining into one**, which is the river confluence and the Y of Yeo in one mark. A stone-gold drop sits where the streams meet. Wordmark "Yeo" in bold, "DRAINAGE" in small spaced capitals.
+`static/assets/logo.svg` and `favicon.svg`: a river-green rounded square with **a stone-gold raindrop above the twin-humped line of the Mendip Hills, and clean water flowing out below**: rain soaks into the hills and comes back out as clean springs, which is what a good drainage system does too. Wordmark "Mendip" in bold, "DRAINAGE" in small spaced capitals.
 
 **Rich to update:** have a designer refine the mark before printing vans and signs.
 

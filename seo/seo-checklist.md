@@ -27,7 +27,7 @@
 
 ## Local SEO
 - Business name, area and phone (once set) identical to the Google Business Profile.
-- Town pages name the council, river or catchment, real nearby villages and the distance from Yeovil.
+- Town pages name the council, river or catchment, real nearby villages and the distance from Wells.
 - Get links from local sources: estate agents, conveyancers, parish newsletters, local business directories, suppliers' "find an installer" pages.
 
 ## After publishing

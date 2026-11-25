@@ -2,7 +2,9 @@
 
 Researched 24 November 2026. Facts are from each firm's own website or directory listing at that date. Re-check before quoting anything.
 
-## Local and regional (within an hour of Yeovil)
+> **Note (25 Nov 2026):** this research was done when the base was Yeovil. The base is now Wells. Rich to update: re-run the competitor-researcher agent for firms around Wells, Cheddar, Glastonbury, Shepton Mallet and Bath.
+
+## Local and regional (within an hour of Yeovil, researched 24 Nov 2026)
 
 | Firm | Base / area | What they do | Notes |
 |---|---|---|---|

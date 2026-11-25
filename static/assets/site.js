@@ -1,4 +1,4 @@
-// Yeo Drainage: septic tank compliance checker. Runs in the browser only; nothing is sent anywhere.
+// Mendip Drainage: septic tank compliance checker. Runs in the browser only; nothing is sent anywhere.
 // Results must match research/regulations.md.
 (function () {
   var forms = document.querySelectorAll('.ck-form');

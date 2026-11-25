@@ -11,7 +11,7 @@ You add or improve one town entry in `src/data/areas.js` so its page has real, a
 Read CLAUDE.md, `brand/brand-context.md`, `research/service-area.md`, `research/regulations.md` (section 12 on phosphates) and the existing entries in `src/data/areas.js`. If I haven't said which town, ask.
 
 ## The job
-1. Check the town is within about an hour of Yeovil. If not, tell me and stop.
+1. Check the town is within about an hour of Wells. If not, tell me and stop.
 2. Fill every field the other entries have: name, slug, county, council, miles, lat, lng, postcode, river, catchment, villages, local.
 3. Research the facts: which council, which river it is on, where that river flows (to the Somerset Levels and Moors, Poole Harbour, River Axe, Hampshire Avon, or none of these), postcode district, and 5–8 real nearby villages. Use official or well-established sources (council sites, Ordnance Survey, Wikipedia for geography only).
 4. Write the `local` paragraph (2–4 sentences): the landscape, ground type and typical properties, and why drainage matters there. It must be specific to this town.

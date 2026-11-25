@@ -42,7 +42,7 @@ function dist(a, b) { // straight-line miles
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(toR(a.lat)) * Math.cos(toR(b.lat)) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
 }
-const yeovil = areas.find(a => a.slug === 'yeovil');
+const base = areas.find(a => a.slug === cfg.baseSlug);
 const nearest = (town, n = 6) => areas.filter(a => a !== town).sort((a, b) => dist(town, a) - dist(town, b)).slice(0, n);
 
 // ---------- clean output ----------
@@ -61,13 +61,13 @@ fs.cpSync(path.join(__dirname, 'static'), OUT, { recursive: true });
     { q: 'How much does it cost to replace a septic tank?', a: `For a normal house, a full replacement with a treatment plant typically costs ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}. We give a fixed written quote after a free site visit.` },
     { q: 'I don\'t know anything about septic tanks. Is that a problem?', a: 'Not at all. Most people with a septic tank have never had to think about where their drains go. We explain everything in plain English, show you where everything is, and give you a simple guide to looking after it.' },
     { q: 'How much mess will it make?', a: 'There will be a digger and some open ground for a few days. We plan the route to keep disruption down, protect drives and paths where we can, and put the ground back when we finish. Your quote says exactly what reinstatement is included.' },
-    { q: 'Which areas do you cover?', a: 'Yeovil and everywhere within about an hour: south Somerset, north and west Dorset, east Devon and the edge of Wiltshire.' },
+    { q: 'Which areas do you cover?', a: 'Wells and everywhere within about an hour: the Mendips, central and south Somerset, Bath and the Chew Valley, Weston-super-Mare and Burnham, and the edges of Dorset and Wiltshire.' },
     { q: 'I am selling my house. Can you help quickly?', a: 'Yes. We can survey the system, give you a written report for the buyer and a fixed quote if work is needed. Tell us your completion date when you call.' },
   ];
   const body = `
 <section class="wrap trust-strip" aria-label="Why choose us">
   <ul>
-    <li><strong>Local to Yeovil</strong><span>Working within about an hour of the town</span></li>
+    <li><strong>Local to Wells</strong><span>Working within about an hour of the city</span></li>
     <li><strong>Prices up front</strong><span>Typical costs published, then a fixed written quote</span></li>
     <li><strong>One team, start to finish</strong><span>Survey, design, building control, install, paperwork</span></li>
     <li><strong>Plain English</strong><span>No jargon, and honest about when you don't need us</span></li>
@@ -135,23 +135,23 @@ fs.cpSync(path.join(__dirname, 'static'), OUT, { recursive: true });
   </div>
   <div>
     <h2>Somerset phosphate schemes</h2>
-    <p>Yeovil and most of south Somerset drain to the Somerset Levels and Moors. Some homeowners may qualify for a funded upgrade. <a href="/phosphate-credits-somerset/">We'll tell you honestly if a scheme suits you better</a>.</p>
+    <p>Wells and much of central and south Somerset drain to the Somerset Levels and Moors. Some homeowners may qualify for a funded upgrade. <a href="/phosphate-credits-somerset/">We'll tell you honestly if a scheme suits you better</a>.</p>
   </div>
 </section>
 
 <section class="wrap">
   <h2>Areas we cover</h2>
-  <p>Yeovil and about an hour around, across Somerset, Dorset, east Devon and south-west Wiltshire.</p>
+  <p>Wells and about an hour around: the Mendips, Somerset, Bath, and the edges of Dorset and Wiltshire.</p>
   <ul class="area-pills">${areas.map(a => `<li><a href="/areas/${a.slug}/">${esc(a.name)}</a></li>`).join('')}</ul>
 </section>
 <section class="wrap">${faqHtml(homeFaqs)}</section>
 ${ctaBand()}`;
   add('/', page({
     path: '/', areas, hero: true,
-    title: `Septic Tank Replacement Yeovil, Somerset & Dorset | ${cfg.brand}`,
-    description: 'Septic tank replacement and sewage treatment plant installation in Yeovil, Somerset and Dorset. Clear prices, free site visit, fixed written quotes.',
+    title: `Septic Tank Replacement Wells & Somerset | ${cfg.brand}`,
+    description: 'Septic tank replacement and sewage treatment plant installation in Wells, the Mendips and across Somerset. Clear prices, free site visit, fixed written quotes.',
     h1: 'Old septic tank? We\'ll replace it properly.',
-    lead: 'Yeo Drainage replaces old and non-compliant septic tanks with modern sewage treatment plants, across Yeovil, Somerset and Dorset. We explain everything in plain English, publish our prices, and handle it all from survey to sign-off.',
+    lead: 'Mendip Drainage replaces old and non-compliant septic tanks with modern sewage treatment plants, across Wells, the Mendips and Somerset. We explain everything in plain English, publish our prices, and handle it all from survey to sign-off.',
     body, crumbs: null, schema: [faqSchema(homeFaqs)],
   }), 1.0);
 }
@@ -335,7 +335,7 @@ ${ctaBand('Get your fixed price')}`;
   add(pth, page({
     path: pth, areas,
     title: 'Septic Tank Replacement Cost UK (2026 Prices) | ' + cfg.brandShort,
-    description: `How much does it cost to replace a septic tank? Typical ${gbp(p.replacementTypicalLow)}–${gbp(p.replacementTypicalHigh)} for a house in Somerset and Dorset. What's included and what changes the price.`,
+    description: `How much does it cost to replace a septic tank? Typical ${gbp(p.replacementTypicalLow)}–${gbp(p.replacementTypicalHigh)} for a house in Somerset. What's included and what changes the price.`,
     h1: 'Septic tank replacement cost',
     lead: `For a normal three or four bedroom house, replacing a septic tank with a sewage treatment plant typically costs ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}, all in. Here is what is included and what moves the price.`,
     body, crumbs: [{ name: 'Home', path: '/' }, { name: 'Prices', path: pth }], schema: [faqSchema(faqs)],
@@ -375,15 +375,13 @@ const CATCH = {
 <li><strong>Existing homes</strong> may be able to get an upgrade funded through a phosphate credit scheme. <a href="/phosphate-credits-somerset/">How the Somerset schemes work</a>.</li>
 </ul>
 <p>Catchment lines don't follow town boundaries, so check your exact property with ${esc(a.council)}.</p>`,
-  poole: (a) => `<p>${esc(a.name)} is on ${esc(a.river)}, which flows to <strong>Poole Harbour</strong>. New development in the Poole Harbour catchment is subject to nutrient rules, which can affect drainage design for new homes and conversions. Check your property with ${esc(a.council)}. The Somerset phosphate schemes do not apply here.</p>`,
-  axe: (a) => `<p>${esc(a.name)} is on ${esc(a.river)}, a protected river with its own nutrient rules for new development. This can affect drainage design for new homes and conversions. Check your property with ${esc(a.council)}.</p>`,
   avon: (a) => `<p>${esc(a.name)} is on ${esc(a.river)}, part of the Hampshire Avon system, which has nutrient rules for new development. This can affect drainage design for new homes and conversions. Check your property with ${esc(a.council)}.</p>`,
+  check: (a) => `<p>${esc(a.name)} drains via ${esc(a.river)}. We are not yet certain whether this area counts as part of the <strong>Somerset Levels and Moors</strong> catchment for phosphates, and catchment lines don't follow town boundaries anyway. If you are planning a new home or conversion, or hoping for a funded upgrade, check your exact property with ${esc(a.council)} or on Natural England's nutrient neutrality map. The Environment Agency's general binding rules apply in full either way, as they do everywhere in England.</p>`,
   none: (a) => `<p>${esc(a.name)} is on ${esc(a.river)}, which we understand is outside the Somerset Levels and Moors catchment, so the Somerset phosphate credit schemes are unlikely to apply. The Environment Agency's general binding rules apply in full, as they do everywhere in England.</p>`,
 };
 const countyGroups = [
   { slug: 'somerset', name: 'Somerset', filter: a => a.county === 'Somerset' },
-  { slug: 'dorset', name: 'Dorset', filter: a => a.county === 'Dorset' },
-  { slug: 'devon-and-wiltshire', name: 'Devon and Wiltshire', filter: a => a.county === 'Devon' || a.county === 'Wiltshire' },
+  { slug: 'dorset-and-wiltshire', name: 'Dorset and Wiltshire', filter: a => a.county === 'Dorset' || a.county === 'Wiltshire' },
 ];
 for (const a of areas) {
   const pth = `/areas/${a.slug}/`;
@@ -391,18 +389,18 @@ for (const a of areas) {
   const crumbs = [{ name: 'Home', path: '/' }, { name: 'Areas', path: '/areas/' }, { name: group.name, path: `/areas/${group.slug}/` }, { name: a.name, path: pth }];
   const near = nearest(a);
   const villages = a.villages.slice(0, 6).join(', ');
-  const isBase = a.slug === 'yeovil';
+  const isBase = a.slug === cfg.baseSlug;
   const faqs = [
     { q: `Do I need to replace my septic tank when selling a house in ${a.name}?`, a: `If it discharges to a stream, river or ditch, it needs upgrading, and the buyer and seller should agree who will do the work as a condition of sale. If it goes to a working drainage field, it may be fine. A survey will tell you.` },
-    { q: `Is ${a.name} in the Somerset phosphate area?`, a: a.catchment === 'slm' ? `We understand ${a.name} drains to the Somerset Levels and Moors, so phosphate rules and credit schemes may be relevant. Check your exact property with ${a.council}.` : `We understand ${a.name} is outside the Somerset Levels and Moors catchment, so the Somerset schemes are unlikely to apply.${a.catchment !== 'none' ? ' Other nutrient rules may apply to new development here.' : ''}` },
-    { q: `How quickly can you get to ${a.name}?`, a: isBase ? 'We are based in Yeovil, so usually very quickly. Call and we will book a free site visit.' : `${a.name} is roughly ${a.miles} miles from our Yeovil base. Call and we will book a free site visit.` },
+    { q: `Is ${a.name} in the Somerset phosphate area?`, a: a.catchment === 'check' ? `We are not certain. ${a.name} is near the edge of the Somerset Levels and Moors catchment, so check your exact property with ${a.council} or on Natural England's nutrient neutrality map.` : a.catchment === 'slm' ? `We understand ${a.name} drains to the Somerset Levels and Moors, so phosphate rules and credit schemes may be relevant. Check your exact property with ${a.council}.` : `We understand ${a.name} is outside the Somerset Levels and Moors catchment, so the Somerset schemes are unlikely to apply.${a.catchment !== 'none' ? ' Other nutrient rules may apply to new development here.' : ''}` },
+    { q: `How quickly can you get to ${a.name}?`, a: isBase ? `We are based in ${cfg.baseTown}, so usually very quickly. Call and we will book a free site visit.` : `${a.name} is roughly ${a.miles} miles from our ${cfg.baseTown} base. Call and we will book a free site visit.` },
   ];
   const body = `
 <div class="wrap content">
 <dl class="glance">
 <div><dt>Council</dt><dd>${esc(a.council)}</dd></div>
 <div><dt>Postcodes</dt><dd>${esc(a.postcode)}</dd></div>
-<div><dt>From Yeovil</dt><dd>${isBase ? 'Our base' : `about ${a.miles} miles`}</dd></div>
+<div><dt>From ${cfg.baseTown}</dt><dd>${isBase ? 'Our base' : `about ${a.miles} miles`}</dd></div>
 <div><dt>Typical replacement</dt><dd>${gbp(p.replacementTypicalLow)}–${gbp(p.replacementTypicalHigh)}</dd></div>
 </dl>
 <section><h2>Septic tanks and off-mains drainage around ${esc(a.name)}</h2>
@@ -423,7 +421,7 @@ ${a.catchmentNote ? `<p>${esc(a.catchmentNote)}</p>` : ''}
 <li><a href="/treatment-plant-servicing/">Treatment plant servicing</a></li>
 </ul></section>
 <section><h2>Septic tank replacement cost in ${esc(a.name)}</h2>
-<p>For a typical house, a full replacement with a treatment plant usually costs ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}. ${a.catchment === 'slm' ? 'Before paying, check whether a phosphate credit scheme could fund your upgrade. ' : ''}See <a href="/septic-tank-replacement-cost/">what changes the price</a>.</p></section>
+<p>For a typical house, a full replacement with a treatment plant usually costs ${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}. ${a.catchment === 'slm' || a.catchment === 'check' ? 'Before paying, check whether a phosphate credit scheme could fund your upgrade. ' : ''}See <a href="/septic-tank-replacement-cost/">what changes the price</a>.</p></section>
 ${faqHtml(faqs)}
 <aside class="related"><h2>Nearby areas</h2><ul class="area-pills">${near.map(n => `<li><a href="/areas/${n.slug}/">${esc(n.name)}</a></li>`).join('')}</ul></aside>
 </div>
@@ -431,9 +429,9 @@ ${ctaBand(`Free site visit in ${esc(a.name)}`)}`;
   const title = `Septic Tank Replacement ${a.name} | ${cfg.brand}`.length <= 62 ? `Septic Tank Replacement ${a.name} | ${cfg.brand}` : `Septic Tank Replacement ${a.name} | ${cfg.brandShort}`;
   add(pth, page({
     path: pth, areas, title,
-    description: `Septic tank replacement and treatment plants in ${a.name} and villages like ${a.villages[0]}. Yeovil-based team, free site visit, fixed written quotes.`,
+    description: `Septic tank replacement and treatment plants in ${a.name} and villages like ${a.villages[0]}. ${cfg.baseTown}-based team, free site visit, fixed written quotes.`,
     h1: `Septic tank replacement in ${a.name}`,
-    lead: isBase ? 'Yeovil is our home. We replace old septic tanks with modern treatment plants across the town and the villages around it, with a free site visit and a fixed written quote.' : `We replace old and failing septic tanks with modern treatment plants in ${a.name} and the surrounding villages, about ${a.miles} miles from our Yeovil base.`,
+    lead: isBase ? 'Wells is our home. We replace old septic tanks with modern treatment plants across the city and the Mendip villages around it, with a free site visit and a fixed written quote.' : `We replace old and failing septic tanks with modern treatment plants in ${a.name} and the surrounding villages, about ${a.miles} miles from our ${cfg.baseTown} base.`,
     body, crumbs, schema: [faqSchema(faqs)],
   }), isBase ? 0.9 : 0.7);
 }
@@ -441,26 +439,25 @@ for (const g of countyGroups) {
   const pth = `/areas/${g.slug}/`;
   const list = areas.filter(g.filter).sort((x, y) => x.miles - y.miles);
   const intro = {
-    somerset: 'South and central Somerset is our core area. Much of it drains to the Somerset Levels and Moors, which brings phosphate rules for new homes and funded upgrade schemes for some existing ones.',
-    dorset: 'North and west Dorset, from Sherborne and the Blackmore Vale to Bridport and Dorchester. Ground ranges from heavy vale clay to fast-draining chalk, so every design starts with a proper test.',
-    'devon-and-wiltshire': 'East Devon around Axminster and Honiton, and south-west Wiltshire around Mere and Warminster, are within an hour of our Yeovil base. Both areas have a lot of isolated farms and cottages a long way from any sewer. The River Axe in Devon and the Hampshire Avon system in Wiltshire (which includes the Wylye at Warminster) have their own nutrient rules for new development, so new homes and conversions need careful drainage design. The general binding rules for existing septic tanks and treatment plants are the same here as anywhere in England.',
+    somerset: 'Somerset is our core area, from Wells and the Mendip villages to the Levels, the Chew Valley, Bath and the south Somerset towns. Much of central Somerset drains to the Somerset Levels and Moors, which brings phosphate rules for new homes and funded upgrade schemes for some existing ones. The north side of the Mendips drains to the Bristol Avon instead.',
+    'dorset-and-wiltshire': 'North Dorset around Sherborne and Gillingham, and west Wiltshire around Mere and Warminster, are within an hour of our Wells base. Both areas have a lot of isolated farms and cottages a long way from any sewer. Sherborne sits on the River Yeo, which drains to the Somerset Levels, while Warminster is on the Wylye, part of the Hampshire Avon system with its own nutrient rules for new development. The general binding rules for existing septic tanks and treatment plants are the same here as anywhere in England.',
   }[g.slug];
-  const body = `<div class="wrap content"><p>${intro}</p><ul class="card-grid">${list.map(a => `<li><a class="card" href="/areas/${a.slug}/"><strong>${esc(a.name)}</strong><span>${a.slug === 'yeovil' ? 'Our base' : `About ${a.miles} miles from Yeovil`}. ${esc(a.villages.slice(0, 3).join(', '))} and nearby.</span></a></li>`).join('')}</ul></div>${ctaBand()}`;
+  const body = `<div class="wrap content"><p>${intro}</p><ul class="card-grid">${list.map(a => `<li><a class="card" href="/areas/${a.slug}/"><strong>${esc(a.name)}</strong><span>${a.slug === cfg.baseSlug ? 'Our base' : `About ${a.miles} miles from ${cfg.baseTown}`}. ${esc(a.villages.slice(0, 3).join(', '))} and nearby.</span></a></li>`).join('')}</ul></div>${ctaBand()}`;
   add(pth, page({ path: pth, areas, title: `Septic Tank Replacement ${g.name} | ${cfg.brand}`,
-    description: `Septic tank replacement and sewage treatment plant installation across ${g.name}. ${list.length} towns covered from our Yeovil base. Free site visits, fixed quotes.`,
-    h1: `Septic tank replacement in ${g.name}`, lead: `Towns and villages we cover in ${g.name}, within about an hour of Yeovil.`,
+    description: `Septic tank replacement and sewage treatment plant installation across ${g.name}. ${list.length} towns covered from our ${cfg.baseTown} base. Free site visits, fixed quotes.`,
+    h1: `Septic tank replacement in ${g.name}`, lead: `Towns and villages we cover in ${g.name}, within about an hour of ${cfg.baseTown}.`,
     body, crumbs: [{ name: 'Home', path: '/' }, { name: 'Areas', path: '/areas/' }, { name: g.name, path: pth }] }), 0.7);
 }
 {
   const pth = '/areas/';
   const body = `<div class="wrap content">
-<p>We are based in Yeovil and cover towns and villages within about an hour's drive. If you are not sure whether we cover you, <a href="/contact/">just ask</a>.</p>
-<p>Each town page explains the local picture: which council handles building control, which river the area drains to, and whether phosphate or other nutrient rules are likely to apply. That matters because the right system for a cottage on the Somerset Levels is often very different from one on the Dorset chalk or the Mendip limestone.</p>
+<p>We are based in Wells and cover towns and villages within about an hour's drive. If you are not sure whether we cover you, <a href="/contact/">just ask</a>.</p>
+<p>Each town page explains the local picture: which council handles building control, which river the area drains to, and whether phosphate or other nutrient rules are likely to apply. That matters because the right system for a cottage on the Somerset Levels is often very different from one on the Mendip limestone or the Wiltshire chalk.</p>
 ${countyGroups.map(g => `<section><h2><a href="/areas/${g.slug}/">${g.name}</a></h2><ul class="area-pills">${areas.filter(g.filter).sort((x, y) => x.miles - y.miles).map(a => `<li><a href="/areas/${a.slug}/">${esc(a.name)}</a></li>`).join('')}</ul></section>`).join('')}
 </div>${ctaBand()}`;
-  add(pth, page({ path: pth, areas, title: 'Areas We Cover: Somerset, Dorset, Devon, Wiltshire | ' + cfg.brand,
-    description: 'Septic tank replacement within an hour of Yeovil: Somerset, north and west Dorset, east Devon and south-west Wiltshire. Find your town.',
-    h1: 'Areas we cover', lead: 'Yeovil and about an hour around.', body, crumbs: [{ name: 'Home', path: '/' }, { name: 'Areas', path: pth }] }), 0.8);
+  add(pth, page({ path: pth, areas, title: 'Areas We Cover: Wells, Somerset & Nearby | ' + cfg.brand,
+    description: 'Septic tank replacement within an hour of Wells: the Mendips, Somerset, Bath, north Dorset and west Wiltshire. Find your town.',
+    h1: 'Areas we cover', lead: 'Wells and about an hour around.', body, crumbs: [{ name: 'Home', path: '/' }, { name: 'Areas', path: pth }] }), 0.8);
 }
 
 // ---------- FAQ ----------
@@ -480,7 +477,7 @@ ${countyGroups.map(g => `<section><h2><a href="/areas/${g.slug}/">${g.name}</a><
 {
   const pth = '/about/';
   const body = `<div class="wrap content">
-<section><h2>Who we are</h2><p>${esc(cfg.brand)} is a Yeovil-based firm that specialises in replacing old septic tanks with modern sewage treatment plants and drainage fields, across Somerset, Dorset and the edges of Devon and Wiltshire.</p>
+<section><h2>Who we are</h2><p>${esc(cfg.brand)} is a Wells-based firm that specialises in replacing old septic tanks with modern sewage treatment plants and drainage fields, across the Mendips, Somerset and the edges of Dorset and Wiltshire.</p>
 <!-- Rich to update: the founder's story, experience and team. Do not publish invented history. --></section>
 <section><h2>How we work</h2>
 <ul>
@@ -490,10 +487,10 @@ ${countyGroups.map(g => `<section><h2><a href="/areas/${g.slug}/">${g.name}</a><
 <li><strong>Tidy.</strong> We protect your garden as far as we can and reinstate it when we finish.</li>
 <li><strong>Paperwork.</strong> A handover pack with everything you need to run the system and to sell your home one day.</li>
 </ul></section>
-<section><h2>Why "Yeo"?</h2><p>The River Yeo runs through Yeovil, and gave the town its name. Our job is getting clean water back into rivers like it, so it felt like the right name for a Yeovil firm.</p></section>
+<section><h2>Why "Mendip"?</h2><p>Wells sits right under the Mendip Hills. Rain soaks into the limestone and comes back out as the springs that gave the city its name, and as the rivers that flow from the hills out across the Levels. Our job is getting clean water back into that system, so the name felt right for a Wells firm.</p></section>
 </div>${ctaBand()}`;
-  add(pth, page({ path: pth, areas, title: 'About Us | ' + cfg.brand + ', Yeovil',
-    description: `${cfg.brand} is a Yeovil-based septic tank replacement and treatment plant specialist covering Somerset, Dorset, east Devon and south-west Wiltshire.`,
+  add(pth, page({ path: pth, areas, title: 'About Us | ' + cfg.brand + ', Wells',
+    description: `${cfg.brand} is a Wells-based septic tank replacement and treatment plant specialist covering the Mendips, Somerset, Bath, north Dorset and west Wiltshire.`,
     h1: 'About us', lead: 'A local team that does one job well: replacing old septic tanks with systems that meet today\'s rules.', body,
     crumbs: [{ name: 'Home', path: '/' }, { name: 'About', path: pth }] }), 0.5);
 }
@@ -525,10 +522,10 @@ ${isTodo(cfg.email) ? '' : `<p><a href="mailto:${esc(cfg.email)}">${esc(cfg.emai
 <h2>What happens next</h2>
 <ol><li>We call you back to ask a few questions.</li><li>We book a free site visit at a time that suits you.</li><li>You get a fixed written quote.</li></ol>
 <h2>Where we work</h2>
-<p>Yeovil and about an hour around. <a href="/areas/">See all areas</a>.</p>
+<p>Wells and about an hour around. <a href="/areas/">See all areas</a>.</p>
 </div></div>`;
   add(pth, page({ path: pth, areas, title: 'Contact Us: Free Site Visit & Quote | ' + cfg.brand,
-    description: 'Book a free site visit for septic tank replacement or a treatment plant in Yeovil, Somerset or Dorset. Call or send your details and we will get back to you.',
+    description: 'Book a free site visit for septic tank replacement or a treatment plant in Wells, the Mendips or across Somerset. Call or send us your details.',
     h1: 'Book a free site visit', lead: 'Tell us a little about your property and we will call you back.', body,
     crumbs: [{ name: 'Home', path: '/' }, { name: 'Contact', path: pth }] }), 0.6);
 }
@@ -538,7 +535,7 @@ ${isTodo(cfg.email) ? '' : `<p><a href="mailto:${esc(cfg.email)}">${esc(cfg.emai
   const pth = '/privacy/';
   const body = `<div class="wrap content">
 <p><strong>Draft. Rich to update with the registered company name, address and ICO registration before launch.</strong></p>
-<h2>Who we are</h2><p>${esc(cfg.brand)}, Yeovil, Somerset.</p>
+<h2>Who we are</h2><p>${esc(cfg.brand)}, ${esc(cfg.baseTown)}, Somerset.</p>
 <h2>What we collect</h2><p>If you contact us, we collect the details you give us (name, phone, email, town and your message) to reply to your enquiry and, if you go ahead, to carry out the work.</p>
 <h2>Analytics</h2><p>We use privacy-friendly analytics that do not use cookies or track you across sites. We do not use advertising trackers.</p>
 <h2>How long we keep it</h2><p>Enquiries that don't lead to work are deleted after 12 months. Customer records are kept as long as needed for guarantees, tax and legal reasons.</p>
@@ -566,5 +563,5 @@ fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitem
 const todos = Object.entries(cfg).filter(([, v]) => typeof v === 'string' && v.startsWith('TODO')).map(([k]) => k);
 console.log(`Built ${pages.length} pages into site/`);
 if (todos.length) console.warn(`WARNING: placeholders still set in src/config.js: ${todos.join(', ')}`);
-const farOff = areas.filter(a => a.slug !== 'yeovil').filter(a => { const d = dist(yeovil, a); return a.miles < d * 0.95 || a.miles > d * 1.7; });
-if (farOff.length) console.warn('WARNING: road miles look wrong vs straight-line distance for: ' + farOff.map(a => `${a.name} (${a.miles} vs ${dist(yeovil, a).toFixed(1)} straight)`).join(', '));
+const farOff = areas.filter(a => a.slug !== cfg.baseSlug).filter(a => { const d = dist(base, a); return a.miles < d * 0.95 || a.miles > d * 1.7; });
+if (farOff.length) console.warn('WARNING: road miles look wrong vs straight-line distance for: ' + farOff.map(a => `${a.name} (${a.miles} vs ${dist(base, a).toFixed(1)} straight)`).join(', '));

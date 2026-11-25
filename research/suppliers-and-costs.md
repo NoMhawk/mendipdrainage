@@ -33,9 +33,9 @@ Researched 24 November 2026. Prices are retailer list prices seen online at that
 - Drainstore (drainstore.com)
 - The Construction Centre
 - Cotterill Civils
-- Builders' merchants with Yeovil branches (e.g. Travis Perkins, Jewson) can order plants in.
+- Builders' merchants with branches near Wells (e.g. Travis Perkins, Jewson) can order plants in.
 
-**Rich to update:** open trade accounts and confirm which local merchant (Yeovil, Sherborne, Taunton) gives the best price and delivery for plants, pipe, stone and chambers. Ask each manufacturer about an approved installer scheme (Klargester, Marsh and Tricel run them). That gives warranty backing and leads.
+**Rich to update:** open trade accounts and confirm which local merchant (Wells, Shepton Mallet, Glastonbury, Bridgwater) gives the best price and delivery for plants, pipe, stone and chambers. Ask each manufacturer about an approved installer scheme (Klargester, Marsh and Tricel run them). That gives warranty backing and leads.
 
 ## Other trades and services we rely on
 - **Tanker / desludging firm** (registered waste carrier) for emptying the old tank before removal.

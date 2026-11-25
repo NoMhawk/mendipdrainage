@@ -115,7 +115,7 @@ module.exports = [
     title: 'Buying a House with a Septic Tank: What to Check',
     description: 'Buying a house with a septic tank in Somerset or Dorset? What to ask, what to check, the rules, and how to avoid inheriting a costly problem.',
     h1: 'Buying a house with a septic tank',
-    lead: 'Lots of lovely rural homes around Yeovil are off the mains. A septic tank is nothing to fear, but you should know what you are buying before you exchange.',
+    lead: 'Lots of lovely rural homes around Wells and the Mendips are off the mains. A septic tank is nothing to fear, but you should know what you are buying before you exchange.',
     sections: [
       { h2: 'Questions to ask the seller', html: `
 <ul>

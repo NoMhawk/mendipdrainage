@@ -3,17 +3,18 @@
 // Rich to update every TODO before launch.
 
 module.exports = {
-  brand: 'Yeo Drainage',               // Chosen by Rich 2026-11-24. yeodrainage.com was unregistered on that date: Rich to buy.
-  brandShort: 'Yeo Drainage',
+  brand: 'Mendip Drainage',            // Chosen by Rich 2026-11-25 (base moved to Wells). mendipdrainage.com was unregistered on that date: Rich to buy.
+  brandShort: 'Mendip Drainage',
   tagline: 'Septic tank replacement, done properly.',
-  url: 'https://www.yeodrainage.com', // Rich to update if www/non-www choice changes (no trailing slash)
-  baseTown: 'Yeovil',
+  url: 'https://www.mendipdrainage.com', // Rich to update if www/non-www choice changes (no trailing slash)
+  baseTown: 'Wells',
+  baseSlug: 'wells',                   // slug of the base town in src/data/areas.js
   region: 'Somerset',
 
-  phone: 'TODO 01935 000000',          // TODO: real number. Shown as "Call us" until set.
-  email: 'TODO hello@yeodrainage.com',
+  phone: 'TODO 01749 000000',          // TODO: real number. Shown as "Call us" until set.
+  email: 'TODO hello@mendipdrainage.com',
   formAction: 'TODO',                  // TODO: form endpoint (e.g. Formspree or a Cloudflare Pages Function). Until set, the form shows phone/email instead.
-  companyName: 'TODO Yeo Drainage Ltd', // TODO: registered company name and number for the footer
+  companyName: 'TODO Mendip Drainage Ltd', // TODO: registered company name and number for the footer
   companyNumber: 'TODO',
   hours: 'Monday to Friday 8am to 6pm, Saturday 8am to 12pm', // TODO: confirm
 

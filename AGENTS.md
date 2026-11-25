@@ -3,7 +3,7 @@
 Instructions for any AI coding agent (Claude Code, Codex, Cursor, Copilot and others) working in this repository. Claude Code also reads `CLAUDE.md`; both files agree, so if they ever conflict, follow `CLAUDE.md` and tell Rich.
 
 ## Project
-A static website for a Yeovil-based septic tank replacement business (**Yeo Drainage**, yeodrainage.com). It targets local search across Somerset, Dorset, east Devon and south-west Wiltshire with service pages, guides and one page per town.
+A static website for a Wells-based septic tank replacement business (**Mendip Drainage**, mendipdrainage.com). It targets local search across the Mendips, Somerset, Bath, north Dorset and west Wiltshire with service pages, guides and one page per town.
 
 ## Before you change anything
 1. Read `brand/brand-context.md` (business, audience, content and privacy rules).

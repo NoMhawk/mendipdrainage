@@ -8,14 +8,14 @@ module.exports = [
     slug: 'septic-tank-replacement',
     keyword: 'septic tank replacement',
     title: 'Septic Tank Replacement in Somerset & Dorset | ' + cfg.brand,
-    description: `Old septic tank discharging to a stream, or failing? We replace it with a modern treatment plant, from survey to sign-off. Yeovil-based, fixed quotes.`,
+    description: `Old septic tank discharging to a stream, or failing? We replace it with a modern treatment plant, from survey to sign-off. Wells-based, fixed quotes.`,
     h1: 'Septic tank replacement',
     lead: 'We take out old, failing or non-compliant septic tanks and put in a modern sewage treatment plant or a new drainage field. One local team, from the first survey to building control sign-off.',
     glance: [
       ['Typical cost', `${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)} for a normal house`],
       ['Time on site', 'Usually 3 to 5 working days'],
       ['Paperwork', 'Building control, design notes, maintenance pack'],
-      ['Area', 'Yeovil and about an hour around'],
+      ['Area', 'Wells and about an hour around'],
     ],
     sections: [
       { h2: 'When does a septic tank need replacing?', fig: { src: 'before-after.svg', alt: 'Before: an old septic tank sending dirty liquid into a ditch, marked not allowed. After: a new treatment plant sending clean water to a flowing stream, marked allowed.', caption: 'The most common upgrade: old septic tank to ditch, replaced by a treatment plant to a flowing stream.' }, html: `
@@ -44,9 +44,9 @@ module.exports = [
 </ol>` },
       { h2: 'What it costs', html: `
 <p>For a normal three or four bedroom house, a full septic tank to treatment plant replacement typically costs <strong>${gbp(p.replacementTypicalLow)} to ${gbp(p.replacementTypicalHigh)}</strong>. The biggest things that change the price are the size of plant, where the treated water goes, and the ground. See the full <a href="/septic-tank-replacement-cost/">septic tank replacement cost guide</a>.</p>` },
-      { h2: 'Why people around Yeovil choose a local firm', html: `
+      { h2: 'Why people around Wells choose a local firm', html: `
 <ul>
-<li>We know the ground here, from the clays of the Levels to the stony ground towards Dorset, and what it means for drainage fields.</li>
+<li>We know the ground here, from the clay and peat of the Levels to the fissured limestone of the Mendips, and what it means for drainage fields.</li>
 <li>We know the councils, building control teams and the Somerset phosphate schemes. If a funded upgrade might suit you better, we will say so. See <a href="/phosphate-credits-somerset/">phosphate credits in Somerset</a>.</li>
 <li>One firm does the survey, design, digging, electrics coordination and paperwork. You are not left to chase three trades.</li>
 </ul>` },
@@ -65,7 +65,7 @@ module.exports = [
     slug: 'sewage-treatment-plant-installation',
     keyword: 'sewage treatment plant installation',
     title: 'Sewage Treatment Plant Installation | Somerset & Dorset',
-    description: 'Domestic sewage treatment plant installation across Yeovil, Somerset and Dorset. Correctly sized, BS EN 12566 plants from leading makers, installed and signed off.',
+    description: 'Sewage treatment plant installation across Wells, the Mendips and Somerset. Correctly sized BS EN 12566 plants from leading makers, installed and signed off.',
     h1: 'Sewage treatment plant installation',
     lead: 'A sewage treatment plant cleans your waste water to a standard that can go to a flowing stream or a drainage field. We size it properly, install it, wire it up through a registered electrician, and hand you the paperwork.',
     glance: [
@@ -193,7 +193,7 @@ module.exports = [
 </ol>` },
       { h2: 'How we help buyers', html: `
 <p>Buying a house with a septic tank? Get it checked before you exchange. A survey tells you what you are taking on, and a written quote gives you a real figure to negotiate with. Read <a href="/guides/buying-a-house-with-a-septic-tank/">buying a house with a septic tank</a>.</p>` },
-      { h2: 'Estate agents and conveyancers', html: `<p>We work across Yeovil, Sherborne, Crewkerne, Castle Cary and the surrounding area. If you have a sale held up by a septic tank question, <a href="/contact/">get in touch</a>. We aim to give clear, written answers your clients can rely on.</p>` },
+      { h2: 'Estate agents and conveyancers', html: `<p>We work across Wells, Glastonbury, Shepton Mallet, Cheddar and the surrounding area. If you have a sale held up by a septic tank question, <a href="/contact/">get in touch</a>. We aim to give clear, written answers your clients can rely on.</p>` },
     ],
     faqs: [
       { q: 'Who pays to replace a septic tank when a house is sold?', a: 'There is no fixed rule. GOV.UK says the buyer and seller should agree who is responsible, as a condition of sale. Often the seller pays or the price is reduced by the cost of the work.' },
@@ -207,7 +207,7 @@ module.exports = [
   {
     slug: 'septic-tank-survey',
     keyword: 'septic tank survey',
-    title: 'Septic Tank Survey for House Sales | Yeovil & Somerset',
+    title: 'Septic Tank Survey for House Sales | Wells & Somerset',
     description: `Septic tank surveys for buyers and sellers in Somerset and Dorset: where it discharges, its condition and whether it meets the rules. From ${gbp(p.surveyFrom)}.`,
     h1: 'Septic tank surveys',
     lead: 'A clear written report on your septic tank, treatment plant or cesspit: what it is, where it goes, its condition, and whether it meets the general binding rules. For buyers, sellers and anyone who wants peace of mind.',
@@ -286,7 +286,7 @@ module.exports = [
   {
     slug: 'treatment-plant-servicing',
     keyword: 'sewage treatment plant service',
-    title: 'Sewage Treatment Plant Servicing | Yeovil & Somerset',
+    title: 'Sewage Treatment Plant Servicing | Wells & Somerset',
     description: `Yearly sewage treatment plant servicing in Somerset and Dorset. Keep it working, meet the general binding rules and have records ready for a sale. From ${gbp(p.serviceFrom)}.`,
     h1: 'Treatment plant servicing',
     lead: 'A treatment plant is a small machine working every day. A yearly service keeps it running, catches faults early, and gives you the records buyers and the Environment Agency expect.',
@@ -321,7 +321,7 @@ module.exports = [
     slug: 'cesspit-replacement',
     keyword: 'cesspit replacement',
     title: 'Cesspit Replacement with a Treatment Plant | Somerset',
-    description: 'Tired of paying to empty a cesspit every few weeks? We replace cesspits and cesspools with sewage treatment plants across Yeovil, Somerset and Dorset.',
+    description: 'Tired of paying to empty a cesspit every few weeks? We replace cesspits and cesspools with sewage treatment plants across Wells, the Mendips and Somerset.',
     h1: 'Cesspit replacement',
     lead: 'A cesspit (or cesspool) is a sealed tank that holds everything until it is pumped out. It has no outlet, so it can need emptying every few weeks. Replacing it with a treatment plant can cut those bills for good.',
     glance: [
@@ -361,7 +361,7 @@ module.exports = [
     ],
     sections: [
       { h2: 'Sewer first', html: `<p>For new discharges, the general binding rules do not apply if a public foul sewer is within 30m of the property boundary (or 30m times the number of homes for a development). Natural England and the Environment Agency also say new development should connect to the sewer where reasonable. We check this first.</p>` },
-      { h2: 'Phosphates and new homes in Somerset', html: `<p>Much of Somerset, including Yeovil, drains to the Somerset Levels and Moors Ramsar site. New homes in that catchment need to show they will not add phosphorus (nutrient neutrality). That can affect your choice of treatment system and whether you need mitigation. See <a href="/phosphate-credits-somerset/">phosphate credits in Somerset</a>, and talk to the council planning team early.</p>` },
+      { h2: 'Phosphates and new homes in Somerset', html: `<p>Much of Somerset, including Wells, drains to the Somerset Levels and Moors Ramsar site. New homes in that catchment need to show they will not add phosphorus (nutrient neutrality). That can affect your choice of treatment system and whether you need mitigation. See <a href="/phosphate-credits-somerset/">phosphate credits in Somerset</a>, and talk to the council planning team early.</p>` },
       { h2: 'What we provide', html: `
 <ul>
 <li>Flow calculations to British Water <em>Flows and Loads</em></li>
@@ -387,7 +387,7 @@ module.exports = [
     lead: 'Somerset\'s phosphate problem has created schemes that pay to upgrade old septic tanks. Some homeowners may get an upgrade funded. Here is how it works, in plain English, and how to find out if it applies to you.',
     glance: [
       ['Where', 'Somerset Levels and Moors catchment'],
-      ['Includes', 'Much of south Somerset, including Yeovil'],
+      ['Includes', 'Much of central and south Somerset, including Wells'],
       ['Possible', 'Funded upgrades for some homes'],
       ['Our advice', 'Check schemes before paying'],
     ],
