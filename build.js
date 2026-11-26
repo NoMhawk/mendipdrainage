@@ -553,7 +553,7 @@ ${isTodo(cfg.email) ? '' : `<p><a href="mailto:${esc(cfg.email)}">${esc(cfg.emai
 write('/thank-you/index.html', page({ path: '/thank-you/', areas, noindex: true, title: 'Thank you | ' + cfg.brand, description: 'Thanks for your enquiry.', h1: 'Thank you',
   lead: 'We have your details and will call you back.',
   body: `<div class="wrap content"><h2>What happens next</h2><ol><li>We call you back to ask a few questions.</li><li>We book a free site visit at a time that suits you.</li><li>You get a fixed written quote.</li></ol>
-<p>Need us sooner? Call <a href="${phoneHref()}">${phoneLabel()}</a>${isTodo(cfg.email) ? '' : ` or email <a href="mailto:${esc(cfg.email)}">${esc(cfg.email)}</a>`}.</p>
+${isTodo(cfg.phone) ? (isTodo(cfg.email) ? '' : `<p>Need us sooner? Email <a href="mailto:${esc(cfg.email)}">${esc(cfg.email)}</a>.</p>`) : `<p>Need us sooner? <a href="${phoneHref()}">${phoneLabel()}</a>${isTodo(cfg.email) ? '' : ` or email <a href="mailto:${esc(cfg.email)}">${esc(cfg.email)}</a>`}.</p>`}
 <p><a class="btn btn-green" href="/">Back to the home page</a> <a href="/guides/">Read our guides</a></p></div>` }));
 
 // ---------- 404 ----------
