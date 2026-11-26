@@ -37,7 +37,7 @@ Other key files:
 - Hosting: Cloudflare Pages. Live site: **https://www.mendipdrainage.com** (domain bought on Cloudflare, 25 Nov 2026).
   - Code: GitHub **NoMhawk/mendipdrainage** (public). Moved from NoMhawk/soakaway on 26 Nov 2026.
   - **mendipdrainage** Pages project is connected to that repo (branch `main`, no build command, output folder `site`). It serves www.mendipdrainage.com and mendipdrainage.com (and mendipdrainage.pages.dev). Every push to main goes live in about a minute, so: `node build.js`, `node scripts/check.js` (0 errors), commit, push.
-  - Domain setup (all in Cloudflare): redirect rule "Bare domain to www" (301, keeps the path and query), Always Use HTTPS on, Web Analytics with automatic setup (no script in the code, no cookies), Email Routing: hello@ and a catch-all forward to Rich's Gmail. Receive only: replies come from Gmail unless "send as" is set up.
+  - Domain setup (all in Cloudflare): redirect rule "Bare domain to www" (301, keeps the path and query), Always Use HTTPS on, Web Analytics with automatic setup (no script in the code, no cookies), Email Routing: hello@ and a catch-all forward to Rich's Gmail. Replies go out as hello@ through Gmail "Send mail as" via SMTP2GO (account smtp2go@richietaylor.net, SMTP user `mendipdrainage`, server mail-eu.smtp2go.com:587). SMTP2GO's DNS records (CNAMEs em1267897, s1267897._domainkey, link) must stay, set to DNS only.
   - Google Search Console: domain property `mendipdrainage.com`, verified by a TXT record in Cloudflare DNS (do not delete it), sitemap `https://www.mendipdrainage.com/sitemap.xml` submitted.
 
 ### Adding or changing pages

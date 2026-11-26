@@ -15,7 +15,7 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [ ] Company registration; add name and number to `src/config.js`.
 - [ ] Business phone number (a local 01935 number builds trust); add to `src/config.js`.
 - [x] Business email on the new domain: hello@mendipdrainage.com (and any other address) forwards to Gmail via Cloudflare Email Routing. Receive only.
-- [ ] Optional: to reply as hello@, set up Gmail "Send mail as" with an SMTP service, then add it to the SPF record.
+- [x] Reply as hello@: Gmail "Send mail as" through SMTP2GO, domain verified with DKIM (26 Nov 2026). Free plan: 1,000 emails a month, 200 a day, 5 sender domains; lower limit while the domain is under 3 months old.
 - [ ] Public liability insurance (and employer's liability if hiring).
 - [ ] Waste carrier registration with the Environment Agency, if you will carry any waste yourself. Otherwise use a registered tanker firm.
 - [ ] British Water accreditation: optional. Their service engineer course is mainly for servicing, which we do not offer; check whether an installer route exists.
@@ -43,7 +43,7 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [x] Google Search Console: domain verified by DNS, sitemap submitted (25 Nov 2026). Sitemap shows Success with 63 pages, and the home page is indexed (checked 26 Nov 2026).
 - [ ] Bing Webmaster Tools: import from Search Console.
 - [x] Cloudflare Email Address Obfuscation turned off (26 Nov 2026), so hello@ shows as a plain link Google can read.
-- [ ] Optional: add a DMARC record (Cloudflare shows it as a recommendation) to stop people faking @mendipdrainage.com emails. Set it up after deciding on Gmail "Send mail as", or it may block your own replies.
+- [ ] Optional: add a DMARC record (Cloudflare recommends it) to stop people faking @mendipdrainage.com emails. Safe now that replies are signed through SMTP2GO: start with `v=DMARC1; p=none`.
 
 ## Local SEO (the biggest win for a local trade)
 - [ ] **Google Business Profile**: category "Septic system service" (plus "Drainage service"), service area set to the towns in `research/service-area.md`, not a shop address if run from home. Add services, photos, opening hours, website link.
