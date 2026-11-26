@@ -13,7 +13,8 @@ module.exports = {
 
   phone: 'TODO 01749 000000',          // TODO: real number. Shown as "Call us" until set.
   email: 'hello@mendipdrainage.com',   // Cloudflare Email Routing forwards this (and every other address on the domain) to Rich's Gmail.
-  formAction: 'TODO',                  // TODO: form endpoint (e.g. Formspree or a Cloudflare Pages Function). Until set, the form shows phone/email instead.
+  formAction: 'https://api.web3forms.com/submit', // Web3Forms (free, 250 a month). Account: mendipdrainage@richietaylor.net, set up 26 Nov 2026.
+  formKey: 'd929552d-4393-4172-98a5-e4f2fa42dee6', // Web3Forms access key. Public by design (it only lets people send to Rich's inbox).
   companyName: 'TODO Mendip Drainage Ltd', // TODO: registered company name and number for the footer
   companyNumber: 'TODO',
   hours: 'Monday to Friday 8am to 6pm, Saturday 8am to 12pm', // TODO: confirm

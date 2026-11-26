@@ -26,7 +26,7 @@ const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m 
 for (const f of htmlFiles) {
   const u = urlOf(f);
   const html = fs.readFileSync(f, 'utf8');
-  const is404 = u === '/404.html';
+  const is404 = u === '/404.html' || html.includes('<meta name="robots" content="noindex">'); // noindex pages (404, thank-you) stay out of the sitemap
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1];
   const desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
   const canon = (html.match(/<link rel="canonical" href="([^"]*)"/) || [])[1];

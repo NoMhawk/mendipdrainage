@@ -498,6 +498,11 @@ ${countyGroups.map(g => `<section><h2><a href="/areas/${g.slug}/">${g.name}</a><
   const pth = '/contact/';
   const formReady = !isTodo(cfg.formAction);
   const form = `<form class="quote-form" method="post" action="${formReady ? esc(cfg.formAction) : '#'}"${formReady ? '' : ' data-disabled="true"'}>
+${formReady ? `<input type="hidden" name="access_key" value="${esc(cfg.formKey)}">
+<input type="hidden" name="subject" value="New enquiry from ${esc(cfg.url.replace(/^https?:\/\//, ''))}">
+<input type="hidden" name="from_name" value="${esc(cfg.brand)} website">
+<input type="hidden" name="redirect" value="${esc(cfg.url)}/thank-you/">
+<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" style="display:none">` : ''}
 <p><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></p>
 <p><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></p>
 <p><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></p>
@@ -535,6 +540,7 @@ ${isTodo(cfg.email) ? '' : `<p><a href="mailto:${esc(cfg.email)}">${esc(cfg.emai
 <p><strong>Draft. Rich to update with the registered company name, address and ICO registration before launch.</strong></p>
 <h2>Who we are</h2><p>${esc(cfg.brand)}, ${esc(cfg.baseTown)}, Somerset.</p>
 <h2>What we collect</h2><p>If you contact us, we collect the details you give us (name, phone, email, town and your message) to reply to your enquiry and, if you go ahead, to carry out the work.</p>
+<h2>Who handles your enquiry</h2><p>The form on our contact page is sent through Web3Forms, a form service that emails your details to us. They handle it only to deliver it to us. If you prefer, call or email us instead.</p>
 <h2>Analytics</h2><p>We use privacy-friendly analytics that do not use cookies or track you across sites. We do not use advertising trackers.</p>
 <h2>How long we keep it</h2><p>Enquiries that don't lead to work are deleted after 12 months. Customer records are kept as long as needed for guarantees, tax and legal reasons.</p>
 <h2>Your rights</h2><p>You can ask to see, correct or delete your data. Contact us using the details on our <a href="/contact/">contact page</a>. You can also complain to the Information Commissioner's Office (ico.org.uk).</p>
@@ -542,6 +548,13 @@ ${isTodo(cfg.email) ? '' : `<p><a href="mailto:${esc(cfg.email)}">${esc(cfg.emai
   add(pth, page({ path: pth, areas, title: 'Privacy Notice | ' + cfg.brand, description: `How ${cfg.brand} collects, uses and stores the personal details you give us when you get in touch.`, h1: 'Privacy notice', body,
     crumbs: [{ name: 'Home', path: '/' }, { name: 'Privacy', path: pth }] }), 0.2);
 }
+
+// ---------- thank you (form redirect, not in the sitemap) ----------
+write('/thank-you/index.html', page({ path: '/thank-you/', areas, noindex: true, title: 'Thank you | ' + cfg.brand, description: 'Thanks for your enquiry.', h1: 'Thank you',
+  lead: 'We have your details and will call you back.',
+  body: `<div class="wrap content"><h2>What happens next</h2><ol><li>We call you back to ask a few questions.</li><li>We book a free site visit at a time that suits you.</li><li>You get a fixed written quote.</li></ol>
+<p>Need us sooner? Call <a href="${phoneHref()}">${phoneLabel()}</a>${isTodo(cfg.email) ? '' : ` or email <a href="mailto:${esc(cfg.email)}">${esc(cfg.email)}</a>`}.</p>
+<p><a class="btn btn-green" href="/">Back to the home page</a> <a href="/guides/">Read our guides</a></p></div>` }));
 
 // ---------- 404 ----------
 write('/404.html', page({ path: '/404.html', areas, noindex: true, title: 'Page not found | ' + cfg.brand, description: 'Page not found.', h1: 'Page not found',

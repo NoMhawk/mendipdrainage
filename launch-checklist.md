@@ -25,7 +25,7 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [ ] ICO data protection fee registration; update the privacy page.
 
 ## Website
-- [ ] Contact form endpoint: set `formAction` in `src/config.js` (Formspree, Web3Forms or a Cloudflare Pages Function). Test it.
+- [x] Contact form: Web3Forms (free, 250 enquiries a month), account mendipdrainage@richietaylor.net, set up 26 Nov 2026. Enquiries are emailed there, then on to Gmail. After sending, visitors land on /thank-you/.
 - [ ] Re-run the competitor research for the Wells area (it was done for Yeovil).
 - [ ] Confirm the phosphate catchment for Cheddar, Wedmore, Burnham-on-Sea and Weston-super-Mare on the Natural England / MAGIC map, then set `catchment` in `src/data/areas.js` (they currently say "not certain").
 - [ ] Check every town's road miles in Google Maps and fix `miles` in `src/data/areas.js`.
