@@ -43,7 +43,7 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [x] Google Search Console: domain verified by DNS, sitemap submitted (25 Nov 2026). Sitemap shows Success with 63 pages, and the home page is indexed (checked 26 Nov 2026).
 - [ ] Bing Webmaster Tools: import from Search Console.
 - [x] Cloudflare Email Address Obfuscation turned off (26 Nov 2026), so hello@ shows as a plain link Google can read.
-- [ ] Optional: add a DMARC record (Cloudflare recommends it) to stop people faking @mendipdrainage.com emails. Safe now that replies are signed through SMTP2GO: start with `v=DMARC1; p=none`.
+- [x] DMARC record added through Cloudflare DMARC Management (26 Nov 2026): `v=DMARC1; p=none`, reports shown in Cloudflare > Email > DMARC Management. After a few weeks of clean reports, consider tightening to `p=quarantine`.
 
 ## Local SEO (the biggest win for a local trade)
 - [ ] **Google Business Profile**: category "Septic system service" (plus "Drainage service"), service area set to the towns in `research/service-area.md`, not a shop address if run from home. Add services, photos, opening hours, website link.
