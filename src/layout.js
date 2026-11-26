@@ -117,7 +117,7 @@ function businessSchema(areas) {
     name: cfg.brand,
     slogan: cfg.tagline,
     url: abs('/'),
-    logo: abs('/assets/logo.svg'),
+    logo: { '@type': 'ImageObject', url: abs('/assets/logo-512.png'), width: 512, height: 512 },
     image: abs('/assets/og-image.png'),
     description: 'Septic tank replacement, sewage treatment plant installation, drainage fields and surveys across Wells, the Mendips, Somerset and nearby.',
     address: { '@type': 'PostalAddress', addressLocality: cfg.baseTown, addressRegion: cfg.region, addressCountry: 'GB' },
@@ -127,6 +127,18 @@ function businessSchema(areas) {
   if (!isTodo(cfg.phone)) s.telephone = cfg.phone;
   if (!isTodo(cfg.email)) s.email = cfg.email;
   return s;
+}
+
+function websiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': abs('/#website'),
+    name: cfg.brand,
+    alternateName: cfg.url.replace(/^https?:\/\/(www\.)?/, ''),
+    url: abs('/'),
+    publisher: { '@id': abs('/#business') },
+  };
 }
 
 function faqSchema(faqs) {
@@ -153,7 +165,7 @@ function relatedHtml(links, heading = 'Related') {
 
 function page({ path, title, description, h1, lead, body, crumbs, schema = [], areas, hero = false, noindex = false, ogType = 'website' }) {
   const canonical = abs(path);
-  const allSchema = [businessSchema(areas), ...(crumbs && crumbs.length > 1 ? [breadcrumbSchema(crumbs)] : []), ...schema];
+  const allSchema = [businessSchema(areas), ...(path === '/' ? [websiteSchema()] : []), ...(crumbs && crumbs.length > 1 ? [breadcrumbSchema(crumbs)] : []), ...schema];
   return `<!doctype html>
 <html lang="en-GB">
 <head>
@@ -169,10 +181,17 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${abs('/assets/og-image.png')}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(cfg.brand)} logo">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${abs('/assets/og-image.png')}">
 <meta name="theme-color" content="#1E4D45">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/style.css">
 ${allSchema.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>

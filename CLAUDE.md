@@ -30,6 +30,7 @@ Other key files:
 - Source: `src/` (data and templates) and `static/` (CSS, logo, diagrams in `static/assets/img/`, the checker script `static/assets/site.js`, Cloudflare `_headers`).
 - Diagrams: add to a page section with `fig: { src, alt, caption }` (or an array of two). Reusable blocks: `add: 'journey' | 'proscons' | 'checker'`. Diagrams and checker answers must match `research/regulations.md`.
 - Audience: homeowners 30+ with no trade knowledge. Explain every technical word, and lead with diagrams, prices and what happens next.
+- Search result icons: `static/favicon.ico` (48 px), `static/apple-touch-icon.png`, `static/assets/icon-192/512.png`, `static/assets/logo-512.png` (the schema logo) and `static/site.webmanifest`. All made from `static/assets/favicon.svg` by `python scripts/make-icons.py`; rerun it if the logo changes. `check.js` fails the build if any are missing or the wrong size.
 - Build: `node build.js` writes the whole site to `site/`. No npm packages needed (Node 18+).
 - Check: `node scripts/check.js`. Must show **0 errors** before any commit. It checks titles, descriptions, one H1, canonicals, sitemap, JSON-LD, broken internal links, visible TODOs and near-duplicate town pages.
 - Preview: `python -m http.server 8080 --directory site` (or the `site` entry in `.claude/launch.json`).

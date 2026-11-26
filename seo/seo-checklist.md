@@ -25,6 +25,13 @@
 - FAQ answers are short, direct and true.
 - No keyword stuffing. Write for the reader.
 
+## How the site looks in search results
+- * `/favicon.ico` (a multiple of 48 px) and the icon links are on every page. This is the small icon next to the result.
+- * The business schema `logo` is a square PNG of at least 112 px on this site (`/assets/logo-512.png`), not an SVG.
+- * The home page has `WebSite` schema with the brand name. Google uses it for the site name above the result.
+- * Every page has og:title, og:description, og:image (1200x630) and twitter:card, for link previews.
+- Google picks up a new icon on its own schedule, often a few weeks. Requesting indexing of the home page can speed it up.
+
 ## Local SEO
 - Business name, area and phone (once set) identical to the Google Business Profile.
 - Town pages name the council, river or catchment, real nearby villages and the distance from Wells.
