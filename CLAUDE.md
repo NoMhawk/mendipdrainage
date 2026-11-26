@@ -35,8 +35,8 @@ Other key files:
 - Preview: `python -m http.server 8080 --directory site` (or the `site` entry in `.claude/launch.json`).
 - `site/` is committed so the host can serve it with no build step. Always rebuild before committing.
 - Hosting: Cloudflare Pages. Live site: **https://www.mendipdrainage.com** (domain bought on Cloudflare, 25 Nov 2026).
-  - **mendipdrainage** Pages project serves www.mendipdrainage.com and mendipdrainage.com (and mendipdrainage.pages.dev). Direct upload, so it does NOT update from GitHub. After every change: `node build.js`, `python scripts/make-upload-zip.py`, then in Cloudflare open Workers & Pages > mendipdrainage > Create deployment > Production, upload `mendip-site.zip`, Save and deploy.
-  - **yeodrainage** (https://yeodrainage.pages.dev): old preview, connected to GitHub NoMhawk/soakaway, redeploys on every push to main. Cloudflare only lets one Pages project use the repo.
+  - Code: GitHub **NoMhawk/mendipdrainage** (public). Moved from NoMhawk/soakaway on 26 Nov 2026.
+  - **mendipdrainage** Pages project is connected to that repo (branch `main`, no build command, output folder `site`). It serves www.mendipdrainage.com and mendipdrainage.com (and mendipdrainage.pages.dev). Every push to main goes live in about a minute, so: `node build.js`, `node scripts/check.js` (0 errors), commit, push.
   - Domain setup (all in Cloudflare): redirect rule "Bare domain to www" (301, keeps the path and query), Always Use HTTPS on, Web Analytics with automatic setup (no script in the code, no cookies), Email Routing: hello@ and a catch-all forward to Rich's Gmail. Receive only: replies come from Gmail unless "send as" is set up.
   - Google Search Console: domain property `mendipdrainage.com`, verified by a TXT record in Cloudflare DNS (do not delete it), sitemap `https://www.mendipdrainage.com/sitemap.xml` submitted.
 

@@ -36,12 +36,10 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [ ] `node build.js` shows no placeholder warnings, and `node scripts/check.js` shows 0 errors.
 
 ## Go live
-- [x] Cloudflare Pages project "yeodrainage" connected to GitHub NoMhawk/soakaway, output folder `site` (done 25 Nov 2026). https://yeodrainage.pages.dev, redeploys on every push to main.
-- [x] Cloudflare Pages project "mendipdrainage" (direct upload, 25 Nov 2026). https://mendipdrainage.pages.dev is the address to use until the domain is bought. It does not update from GitHub: see CLAUDE.md for the refresh steps.
+- [x] Cloudflare Pages project "mendipdrainage" connected to GitHub NoMhawk/mendipdrainage, output folder `site` (26 Nov 2026). Redeploys on every push to main.
 - [x] mendipdrainage.com and www attached to the mendipdrainage Pages project (25 Nov 2026).
-- [ ] Optional: make updates automatic. Delete yeodrainage, create a new Git-connected project, attach the domain to it, then delete the direct-upload project.
 - [x] HTTPS forced, mendipdrainage.com redirects to https://www.mendipdrainage.com (matches `url`).
-- [x] Cloudflare Web Analytics on for mendipdrainage.com (automatic setup, no script in the code). The unused yeodrainage.pages.dev entry can be deleted.
+- [x] Cloudflare Web Analytics on for mendipdrainage.com (automatic setup, no script in the code). The unused yeodrainage.pages.dev analytics entry can be deleted.
 - [x] Google Search Console: domain verified by DNS, sitemap submitted (25 Nov 2026). Check back in a few days that it shows Success, then request indexing for the home page.
 - [ ] Bing Webmaster Tools: import from Search Console.
 
