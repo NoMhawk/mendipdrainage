@@ -39,9 +39,11 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [x] Cloudflare Pages project "mendipdrainage" connected to GitHub NoMhawk/mendipdrainage, output folder `site` (26 Nov 2026). Redeploys on every push to main.
 - [x] mendipdrainage.com and www attached to the mendipdrainage Pages project (25 Nov 2026).
 - [x] HTTPS forced, mendipdrainage.com redirects to https://www.mendipdrainage.com (matches `url`).
-- [x] Cloudflare Web Analytics on for mendipdrainage.com (automatic setup, no script in the code). The unused yeodrainage.pages.dev analytics entry can be deleted.
-- [x] Google Search Console: domain verified by DNS, sitemap submitted (25 Nov 2026). Check back in a few days that it shows Success, then request indexing for the home page.
+- [x] Cloudflare Web Analytics on for mendipdrainage.com (automatic setup, no script in the code). Old yeodrainage.pages.dev entry deleted (26 Nov 2026).
+- [x] Google Search Console: domain verified by DNS, sitemap submitted (25 Nov 2026). Sitemap shows Success with 63 pages, and the home page is indexed (checked 26 Nov 2026).
 - [ ] Bing Webmaster Tools: import from Search Console.
+- [ ] Turn off Cloudflare Email Address Obfuscation (mendipdrainage.com > Security > Settings). It hides hello@ behind a Cloudflare script, so Google can't see the address and the link breaks without JavaScript. Rich to do: Claude isn't allowed to change security settings.
+- [ ] Optional: add a DMARC record (Cloudflare shows it as a recommendation) to stop people faking @mendipdrainage.com emails. Set it up after deciding on Gmail "Send mail as", or it may block your own replies.
 
 ## Local SEO (the biggest win for a local trade)
 - [ ] **Google Business Profile**: category "Septic system service" (plus "Drainage service"), service area set to the towns in `research/service-area.md`, not a shop address if run from home. Add services, photos, opening hours, website link.
