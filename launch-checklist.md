@@ -42,7 +42,7 @@ Everything Rich needs to do or decide before the site goes live. Tick as you go.
 - [x] Cloudflare Web Analytics on for mendipdrainage.com (automatic setup, no script in the code). Old yeodrainage.pages.dev entry deleted (26 Nov 2026).
 - [x] Google Search Console: domain verified by DNS, sitemap submitted (25 Nov 2026). Sitemap shows Success with 63 pages, and the home page is indexed (checked 26 Nov 2026).
 - [ ] Bing Webmaster Tools: import from Search Console.
-- [ ] Turn off Cloudflare Email Address Obfuscation (mendipdrainage.com > Security > Settings). It hides hello@ behind a Cloudflare script, so Google can't see the address and the link breaks without JavaScript. Rich to do: Claude isn't allowed to change security settings.
+- [x] Cloudflare Email Address Obfuscation turned off (26 Nov 2026), so hello@ shows as a plain link Google can read.
 - [ ] Optional: add a DMARC record (Cloudflare shows it as a recommendation) to stop people faking @mendipdrainage.com emails. Set it up after deciding on Gmail "Send mail as", or it may block your own replies.
 
 ## Local SEO (the biggest win for a local trade)
